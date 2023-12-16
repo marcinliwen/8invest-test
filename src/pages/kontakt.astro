@@ -1,0 +1,164 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Card from "../components/Card.astro";
+import Input from "../components/Input.astro";
+import Select from "../components/Select.astro";
+import Numbers from "../components/Numbers.astro";
+---
+
+<Layout title="Kontakt">
+  <section class="pt-[120px] pb-[106px]">
+    <div class="container wrapper">
+      <div class="max-w-[549px] mx-auto text-center pb-12">
+        <h1 class="mb-3">Kontakt</h1>
+        <h3 class="mb-10">
+          Dorem ipsum consectetur dolor sit amet, consectetur <em>adipiscing</em
+          > elit.
+        </h3>
+      </div>
+      <div class="lg:flex">
+        <div class="lg:pr-14 mb-14 lg:mb-0">
+          <img src="/assets/images/kontakt-img.png" class="w-full" />
+        </div>
+        <div class="lg:max-w-[578px] w-full">
+          <h3 class="mb-4">Zadzwoń</h3>
+          <p class="text-lg mb-4">
+            Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio.
+          </p>
+          <a class="mb-8 flex items-center gap-4"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <g clip-path="url(#clip0_369_9330)">
+                <path
+                  d="M15.0402 22.3901L15.0522 22.3971C16.1143 23.0733 17.3753 23.3671 18.6269 23.2298C19.8785 23.0925 21.0459 22.5325 21.9362 21.6421L22.7102 20.8681C23.0559 20.522 23.2501 20.0528 23.2501 19.5636C23.2501 19.0744 23.0559 18.6052 22.7102 18.2591L19.4492 15.0001C19.1031 14.6544 18.6339 14.4603 18.1447 14.4603C17.6555 14.4603 17.1863 14.6544 16.8402 15.0001C16.669 15.1715 16.4658 15.3075 16.242 15.4002C16.0183 15.493 15.7784 15.5407 15.5362 15.5407C15.294 15.5407 15.0541 15.493 14.8304 15.4002C14.6066 15.3075 14.4034 15.1715 14.2322 15.0001L9.0142 9.78112C8.66851 9.43499 8.47434 8.9658 8.47434 8.47662C8.47434 7.98743 8.66851 7.51824 9.0142 7.17212C9.18558 7.00095 9.32154 6.79768 9.4143 6.57393C9.50706 6.35018 9.55481 6.11033 9.55481 5.86812C9.55481 5.6259 9.50706 5.38606 9.4143 5.16231C9.32154 4.93856 9.18558 4.73528 9.0142 4.56412L5.7542 1.30012C5.40808 0.954425 4.93889 0.760254 4.4497 0.760254C3.96052 0.760254 3.49133 0.954425 3.1452 1.30012L2.3712 2.07412C1.48103 2.9645 0.921017 4.13176 0.783575 5.38328C0.646134 6.63479 0.93948 7.89577 1.6152 8.95812L1.6232 8.97012C5.19662 14.2599 9.75118 18.8155 15.0402 22.3901Z"
+                  stroke="#C6CAFF"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"></path>
+              </g>
+              <defs>
+                <clipPath id="clip0_369_9330">
+                  <rect width="24" height="24" fill="white"></rect>
+                </clipPath>
+              </defs>
+            </svg><span class="text-xl">+ 22 746 27 72</span></a
+          >
+          <h3 class="mb-4">Lorem ipsum</h3>
+          <p class="text-lg mb-4">
+            Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio.
+          </p>
+          <a class="mb-8 flex items-center gap-4"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+            >
+              <path
+                d="M21.4284 3H2.57122C1.62444 3 0.856934 3.76752 0.856934 4.71429V19.2857C0.856934 20.2325 1.62444 21 2.57122 21H21.4284C22.3752 21 23.1426 20.2325 23.1426 19.2857V4.71429C23.1426 3.76752 22.3752 3 21.4284 3Z"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M0.856934 5.14282L10.9026 13.7143C11.2107 13.9708 11.5989 14.1113 11.9998 14.1113C12.4007 14.1113 12.7889 13.9708 13.0969 13.7143L23.1426 5.14282"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg><span class="text-xl">kontakt@8invest.pl</span></a
+          >
+          <h3 class="mb-8">Bądź na bieżąco</h3>
+          <div class="flex gap-8">
+            <a
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+              >
+                <path
+                  d="M6.5 22.9998H1.5V9.99976H6.5V22.9998ZM15.5 13.9998C14.9696 13.9998 14.4609 14.2105 14.0858 14.5855C13.7107 14.9606 13.5 15.4693 13.5 15.9998V22.9998H8.5V9.99976H13.5V11.4848C14.6163 10.5386 16.0268 10.0101 17.49 9.98976C20.452 9.98976 22.5 12.1898 22.5 16.3448V22.9998H17.5V15.9998C17.5 15.4693 17.2893 14.9606 16.9142 14.5855C16.5391 14.2105 16.0304 13.9998 15.5 13.9998ZM6.5 5.49976C6.5 5.99421 6.35338 6.47756 6.07868 6.88868C5.80397 7.2998 5.41353 7.62024 4.95671 7.80945C4.49989 7.99867 3.99723 8.04818 3.51228 7.95172C3.02732 7.85526 2.58187 7.61715 2.23223 7.26752C1.8826 6.91789 1.6445 6.47243 1.54804 5.98748C1.45157 5.50253 1.50108 4.99986 1.6903 4.54305C1.87952 4.08623 2.19995 3.69579 2.61108 3.42108C3.0222 3.14638 3.50555 2.99976 4 2.99976C4.66304 2.99976 5.29893 3.26315 5.76777 3.73199C6.23661 4.20083 6.5 4.83671 6.5 5.49976Z"
+                  fill="white"></path>
+              </svg></a
+            >
+            <a
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+              >
+                <path
+                  d="M17.768 8.00024H13.5V6.10024C13.481 5.95885 13.4934 5.81501 13.5363 5.67895C13.5792 5.54288 13.6515 5.41792 13.748 5.31293C13.8446 5.20794 13.9632 5.1255 14.0952 5.07146C14.2272 5.01742 14.3695 4.99311 14.512 5.00024C14.93 5.00024 17.5 5.01024 17.5 5.01024V1.00024H13.171C9.244 1.00024 8.5 3.97424 8.5 5.85524V8.00024H5.5V12.0002H8.5V24.0002H13.5V12.0002H17.351L17.768 8.00024Z"
+                  fill="white"></path>
+              </svg></a
+            >
+            <a
+              ><svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none"
+              >
+                <path
+                  d="M23 7.12823L21 6.62823L22 4.62823L19.536 5.32823C18.8963 4.73141 18.0958 4.33498 17.2334 4.18784C16.3709 4.0407 15.4843 4.1493 14.6829 4.50024C13.8815 4.85118 13.2004 5.4291 12.7236 6.16267C12.2468 6.89624 11.9953 7.75335 12 8.62823V9.62823C8.461 10.3582 5.366 8.42823 2.5 5.12823C2 7.79489 2.5 9.79489 4 11.1282L1 10.6282C1.405 12.6972 2.362 14.3282 5 14.6282L2.5 15.6282C3.5 17.6282 5.066 17.9382 7.5 18.1282C5.60692 19.4809 3.32603 20.1827 1 20.1282C13.755 25.7972 21 17.4642 21 10.1282V8.80023L23 7.12823Z"
+                  fill="white"></path>
+              </svg></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="pb-[154px] pt-[113px] rounded-[24px] bg-main-700">
+    <div class="container wrapper">
+      <div class="lg:flex">
+        <div class="lg:pr-14 mb-14 lg:mb-0">
+          <h3 class="mb-8">Zgłoszenie</h3>
+          <p class="text-2xl">
+            Dziękujemy za zainteresowanie Funduszem 8Invest. Jeśli nasza oferta
+            inwestycyjna zainspirowała Państwa plany, zachęcamy do nawiązania
+            kontaktu. Zainicjowaliśmy naszą działalność, by skutecznie wspomagać
+            w realizacji Państwa strategicznych celów – niezależnie od tego, czy
+            jest to wyszukiwanie optymalnej działki, sprzedaż gruntu do naszego
+            funduszu, czy też utworzenie partnerskiego przedsięwzięcia (JV).
+            Czekamy na złożenie zgłoszenia ze strony Państwa, gotowi do
+            wspólnego odkrywania potencjału inwestycyjnego i wspierania
+            kształtowania przyszłych sukcesów.
+          </p>
+        </div>
+        <div class="lg:max-w-[578px] w-full lg:flex-shrink-0">
+          <form class="w-full max-w-[562px] md:ml-auto flex flex-col gap-6">
+            <Input name="name" type="text" placeholder="Imię i nazwisko" />
+			<Input name="firma" type="text" placeholder="Nazwa firmy" />
+			<Input name="phone" type="phone" placeholder="Numer telefonu" />
+			<Input name="email" type="email" placeholder="Email" />
+            <Select
+              name="temat"
+              placeholder="Temat"
+              options={["first", "second", "third"]}
+            />
+            <div class="custom-textarea">
+              <textarea placeholder="Treść wiadomości" name="message" rows="6"
+              ></textarea>
+              <div class="textarea-cover"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Numbers />
+</Layout>

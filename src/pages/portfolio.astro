@@ -1,0 +1,753 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Teritory from "../components/Teritory.astro";
+import "../../public/assets/style/modal.css";
+---
+
+<Layout title="Portfolio">
+  <section class="pt-[120px] pb-14">
+    <div class="container wrapper">
+      <div class="max-w-[1005px] mx-auto text-center">
+        <h1 class="mb-3">Portfolio</h1>
+        <h3 class="mb-10">
+          Zapraszamy do zgłębienia naszych <em>unikalnych ofert</em> i
+          skorzystania z bogactwa doświadczenia, jakie oferujemy w dziedzinie
+          nieruchomości.
+        </h3>
+        <p class="text-lg">
+          Niezależnie od tego, czy planują Państwo rozwój mieszkaniowy,
+          komercyjny czy przemysłowy, nasze portfolio pełne jest różnorodnych
+          możliwości. Nasze projekty posiadają gotowe warunki techniczne,
+          przyłącza oraz decyzje środowiskowe, co sprawia, że proces
+          inwestycyjny staje się wyjątkowo płynny i efektywny.
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="pb-[90px]">
+    <div class="container wrapper">
+      <div
+        class="flex flex-col md:flex-row items-center gap-[12px] p-[4px] border border-white rounded-[28px] md:rounded-full w-max mx-auto mb-6"
+      >
+        <a class="btn white min-w-[200px]">Aktualne projekty</a>
+        <a class="btn min-w-[200px]">Archiwalne projekty</a>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6 pt-6">
+        {
+          [1, 2, 3, 4, 5, 6].map((item) => {
+            return (
+              <div class="p-6 rounded-[24px] border border-white flex flex-wrap lg:flex-nowrap gap-6">
+                <img
+                  src="/assets/images/invest-2.png"
+                  class="relative z-0 rounded-[16px] lg:flex-shrink-0 w-full lg:max-w-[318px]"
+                />
+                <div class="max-w-[274px]">
+                  <p class="text-xl mb-4 font-medium">
+                    Świdnica - nieruchomość inwestycyjna
+                  </p>
+                  <p class="text-lg mb-4">
+                    Lokalizacja:  województwo dolnośląskie, powiat świdnicki,
+                    miejscowość Świdnica
+                  </p>
+                  <p class="mb-4 text-lg">
+                    Przeznaczenie: <span class="font-medium">Logistyczny</span>
+                  </p>
+                  <p class="text-lg mb-4">
+                    Powierzchnia terenu: <br />
+                    <span class="font-medium">ok 220 000 m2</span>
+                  </p>
+                  <button
+                    type="button"
+                    id="open-project"
+                    class="modal-trigger"
+                    data-modal="recap-video-modal"
+                  >
+                    <img class="w-10 h-10" src="/assets/icons/arrow-down.svg" />
+                  </button>
+                  <div class="modal recap-video-modal">
+                    <div class="modal__content">
+                      <div class="container wrapper h-screen overflow-auto pt-[142px] pb-[78px] relative">
+                        <div class="max-w-[1174px] mx-auto ">
+                          <h2 class="text-4xl mb-4">Nazwa projektu {item}</h2>
+                          <p class="text-2xl">Województwo:</p>
+                          <div class="mt-14 grid lg:grid-cols-2 gap-[100px] mb-[72px]">
+                            <div>
+                              <p class="text-xl">
+                                Jorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Nunc vulputate libero et velit
+                                interdum, ac aliquet odio mattis. Class aptent
+                                taciti sociosqu ad litora torquent per conubia
+                                nostra, per inceptos himenaeos.
+                                <>
+                                  <br />
+                                  <br />
+                                </>
+                                Jorem ipsum dolor sit amet, consectetur
+                                adipiscing elit. Nunc vulputate libero et velit
+                                interdum, ac aliquet odio mattis. Class aptent
+                                taciti sociosqu ad litora torquent per conubia
+                                nostra, per inceptos himenaeos.
+                              </p>
+                            </div>
+                            <div>
+                              <img src="/assets/images/modal-1.png" />
+                            </div>
+                          </div>
+                          <div>
+                            <a class="btn main mx-auto ">Lorem ipsum</a>
+                          </div>
+                        </div>
+                        
+                      </div>
+                    </div>
+                    <span class="close-icon modal-close">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="26"
+                            height="26"
+                            viewBox="0 0 26 26"
+                            fill="none"
+                          >
+                            <path
+                              d="M1 25L25 1"
+                              stroke="white"
+                              stroke-width="1.17073"
+                            />
+                            <path
+                              d="M1 1L25 25"
+                              stroke="white"
+                              stroke-width="1.17073"
+                            />
+                          </svg>
+                        </span>
+                  </div>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </section>
+  <Teritory />
+  <section class="pt-[127px] pb-[172px] bg-main-700 rounded-[32px]">
+    <div class="container wrapper">
+      <div
+        class="max-w-[1174px] mx-auto grid gap-14 md:grid-cols-2 md:gap-20 lg:grid-cols-3"
+      >
+        <div>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="56"
+            height="56"
+            viewBox="0 0 56 56"
+            fill="none"
+            class="mb-4"
+          >
+            <g clip-path="url(#clip0_369_8762)">
+              <path
+                d="M1.16666 54.8333H54.8333"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M5.83334 8.16667H50.1667V54.8333H5.83334V8.16667Z"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M1.16666 8.16667H54.8333"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M47.8333 8.16667V3.50001C47.8333 2.88117 47.5875 2.28767 47.1499 1.85009C46.7123 1.4125 46.1188 1.16667 45.5 1.16667H10.5C9.88116 1.16667 9.28767 1.4125 8.85008 1.85009C8.4125 2.28767 8.16666 2.88117 8.16666 3.50001V8.16667"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M24.5 54.8333V46.6667C24.5 45.7384 24.8687 44.8482 25.5251 44.1918C26.1815 43.5354 27.0717 43.1667 28 43.1667C28.9283 43.1667 29.8185 43.5354 30.4749 44.1918C31.1313 44.8482 31.5 45.7384 31.5 46.6667V54.8333"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M12.8333 45.5H19.8333"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M36.1667 45.5H43.1667"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M12.8333 36.1667H22.1667"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M33.8333 36.1667H43.1667"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M12.8333 26.8333H22.1667"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M33.8333 26.8333H43.1667"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M12.8333 17.5H22.1667"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M33.8333 17.5H43.1667"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </g>
+            <defs>
+              <clipPath id="clip0_369_8762">
+                <rect width="56" height="56" fill="white"></rect>
+              </clipPath>
+            </defs>
+          </svg>
+          <h3 class="mb-4">Inwestycje Mieszkaniowe</h3>
+          <p class="text-lg">
+            Oferujemy atrakcyjne i dostosowane grunty pod inwestycje
+            mieszkaniowe, umożliwiając rozwój nowoczesnych i komfortowych
+            osiedli.
+          </p>
+        </div>
+        <div>
+          <div class="mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="56"
+              height="56"
+              viewBox="0 0 56 56"
+              fill="none"
+            >
+              <path
+                d="M28.0117 40.25H15.7617C15.2975 40.25 14.8524 40.4344 14.5242 40.7626C14.196 41.0908 14.0117 41.5359 14.0117 42V52.5C14.0117 52.9641 14.196 53.4092 14.5242 53.7374C14.8524 54.0656 15.2975 54.25 15.7617 54.25H28.0117V40.25Z"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M40.2617 40.25H28.0117V54.25H40.2617C40.7258 54.25 41.1709 54.0656 41.4991 53.7374C41.8273 53.4092 42.0117 52.9641 42.0117 52.5V42C42.0117 41.5359 41.8273 41.0908 41.4991 40.7626C41.1709 40.4344 40.7258 40.25 40.2617 40.25Z"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M33.2617 26.25H22.7617C22.2975 26.25 21.8524 26.4344 21.5242 26.7626C21.196 27.0908 21.0117 27.5359 21.0117 28V40.25H35.0117V28C35.0117 27.5359 34.8273 27.0908 34.4991 26.7626C34.1709 26.4344 33.7258 26.25 33.2617 26.25Z"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M1.76166 15.75H54.2617V51.9167C54.2617 52.5355 54.0158 53.129 53.5782 53.5666C53.1407 54.0042 52.5472 54.25 51.9283 54.25H4.09499C3.47615 54.25 2.88266 54.0042 2.44508 53.5666C2.00749 53.129 1.76166 52.5355 1.76166 51.9167V15.75Z"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M1.76166 15.75C1.76166 8.01733 13.5147 1.75 28.0117 1.75C42.5087 1.75 54.2617 8.01733 54.2617 15.75"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+
+          <h3 class="mb-4">Projekty Komercyjne</h3>
+          <p class="text-lg">
+            Zapewniamy lokalizacje idealnie dostosowane do potrzeb branż
+            przemysłowej, logistycznej, usługowej i handlowej.
+          </p>
+        </div>
+        <div>
+          <div class="mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="56"
+              height="56"
+              viewBox="0 0 56 56"
+              fill="none"
+            >
+              <path
+                d="M32.8125 32.1251H38.8854V4.16667C38.8854 3.25 38.1978 2.33333 37.0521 2.33333H21.0104C20.0937 2.33333 19.1771 3.02084 19.1771 4.16667V19.1198"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M31.7812 16.5417H38.8853"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M27.4272 9.66666H38.8855"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M35.2189 23.4166H38.8855"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M53.7812 32.1251H38.8854"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M50.3438 32.1249V11.5C50.3438 10.5833 49.6561 9.66663 48.5102 9.66663H39.3438"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M44.6145 16.5416H50.3435"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M44.6145 23.4166H50.3435"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M21.0106 33.4999C26.0521 34.8749 29.719 39.6874 29.719 45.1876V46.7917"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M14.1356 46.7917V30.2916C14.1356 28.9168 15.0523 28 16.4273 28H18.7189C20.094 28 21.0106 28.9168 21.0106 30.2916V46.7917"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M33.1564 51.3751C33.1564 52.7499 32.2396 53.6667 30.8646 53.6667H4.51048C3.13547 53.6667 2.21881 52.7499 2.21881 51.3751V49.0833C2.21881 47.7083 3.13547 46.7917 4.51048 46.7917H30.8646C32.2396 46.7917 33.1564 47.7083 33.1564 49.0833V51.3751Z"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M14.1355 33.4999C9.09385 34.8749 5.42719 39.6874 5.42719 45.1876V46.7917"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+
+          <h3 class="mb-4">Działki Przemysłowe</h3>
+          <p class="text-lg">
+            Posiadamy obszerne działy przemysłowe, gotowe do adaptacji pod
+            nowoczesne przedsiębiorstwa produkcyjne i przemysłowe.
+          </p>
+        </div>
+        <div>
+          <div class="mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="56"
+              height="56"
+              viewBox="0 0 56 56"
+              fill="none"
+            >
+              <path
+                d="M44.3333 10.5H48.3233C48.9038 10.4971 49.4645 10.7106 49.8959 11.099C50.3274 11.4873 50.5986 12.0224 50.6567 12.6L54.81 52.2667C54.8434 52.5903 54.8087 52.9173 54.7083 53.2267C54.6078 53.5361 54.4438 53.8211 54.2267 54.0633C54.0085 54.3051 53.7422 54.4984 53.4448 54.631C53.1474 54.7637 52.8256 54.8326 52.5 54.8333H3.5C3.1744 54.8326 2.85256 54.7637 2.55519 54.631C2.25781 54.4984 1.99149 54.3051 1.77333 54.0633C1.55623 53.8211 1.39218 53.5361 1.29172 53.2267C1.19127 52.9173 1.15662 52.5903 1.19 52.2667L5.34333 12.6C5.40137 12.0224 5.6726 11.4873 6.10406 11.099C6.53551 10.7106 7.09621 10.4971 7.67667 10.5H44.3333Z"
+                stroke="#ACB2FD"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M2.38 40.8333H53.62"
+                stroke="#ACB2FD"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M4.10667 24.5H51.1875"
+                stroke="#ACB2FD"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M37.625 55.125L35.875 10.5"
+                stroke="#ACB2FD"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M17.5 55.125L19.25 10.5"
+                stroke="#ACB2FD"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+
+          <h3 class="mb-4">Tereny Logistyczne</h3>
+          <p class="text-lg">
+            Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+            vulputate libero et velit interdum, ac aliquet odio.
+          </p>
+        </div>
+        <div>
+          <div class="mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="56"
+              height="56"
+              viewBox="0 0 56 56"
+              fill="none"
+            >
+              <path
+                d="M1.75 51.9167H54.25"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M50.1666 18.0833V51.9167H5.83331V18.0833"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M23.8 51.9167V41.8831C23.8 39.5498 25.6664 37.6831 27.9998 37.6831C30.3331 37.6831 32.2 39.5498 32.2 41.8831V51.9167"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M54.25 15.75C54.25 17.15 53.3167 18.0833 51.9167 18.0833H4.08333C2.68333 18.0833 1.75 17.15 1.75 15.75V8.75001C1.75 7.35001 2.68333 6.41667 4.08333 6.41667H51.9167C53.3167 6.41667 54.25 7.35001 54.25 8.75001V15.75Z"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M15.1668 41.8831C14.9091 41.8831 14.7001 41.6743 14.7001 41.4164C14.7001 41.1588 14.9091 40.9498 15.1668 40.9498"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M15.1665 41.8831C15.4242 41.8831 15.6332 41.6743 15.6332 41.4164C15.6332 41.1588 15.4242 40.9498 15.1665 40.9498"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M15.1668 29.0498C14.9091 29.0498 14.7001 28.8409 14.7001 28.5831C14.7001 28.3255 14.9091 28.1164 15.1668 28.1164"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M15.1665 29.0498C15.4242 29.0498 15.6332 28.8409 15.6332 28.5831C15.6332 28.3255 15.4242 28.1164 15.1665 28.1164"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M28.0002 29.0498C27.7424 29.0498 27.5333 28.8409 27.5333 28.5831C27.5333 28.3255 27.7424 28.1164 28.0002 28.1164"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M27.9998 29.0498C28.2576 29.0498 28.4667 28.8409 28.4667 28.5831C28.4667 28.3255 28.2576 28.1164 27.9998 28.1164"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M40.8335 29.0498C40.5757 29.0498 40.3666 28.8409 40.3666 28.5831C40.3666 28.3255 40.5757 28.1164 40.8335 28.1164"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M40.8331 29.0498C41.091 29.0498 41.3 28.8409 41.3 28.5831C41.3 28.3255 41.091 28.1164 40.8331 28.1164"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M40.8335 41.8831C40.5757 41.8831 40.3666 41.6743 40.3666 41.4164C40.3666 41.1588 40.5757 40.9498 40.8335 40.9498"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M40.8331 41.8831C41.091 41.8831 41.3 41.6743 41.3 41.4164C41.3 41.1588 41.091 40.9498 40.8331 40.9498"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-miterlimit="10"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+
+          <h3 class="mb-4">Zrównoważony Rozwój</h3>
+          <p class="text-lg">
+            Oferta obejmuje także tereny przeznaczone pod innowacyjne projekty
+            zrównoważonego rozwoju
+          </p>
+        </div>
+        <div>
+          <div class="mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="56"
+              height="56"
+              viewBox="0 0 56 56"
+              fill="none"
+            >
+              <path
+                d="M22.75 32.4363C22.75 34.611 25.0997 36.375 28 36.375C30.9003 36.375 33.25 34.611 33.25 32.4363C33.25 30.2617 30.9003 28.5 28 28.5C25.0997 28.5 22.75 26.736 22.75 24.5613C22.75 22.3867 25.0997 20.625 28 20.625C30.9003 20.625 33.25 22.3867 33.25 24.5613"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M28 18V20.625"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M28 36.375V39"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M6.5 8H48.5C48.5 8 52 8 52 12.3V46.7C52 46.7 52 51 48.5 51H6.5C6.5 51 3 51 3 46.7V12.3C3 12.3 3 8 6.5 8Z"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+
+          <h3 class="mb-4">Lokalizacje Komercyjne</h3>
+          <p class="text-lg">
+            Prezentujemy grunty w strategicznych miejscach, zwiększające
+            potencjał inwestycji.
+          </p>
+        </div>
+        <div>
+          <div class="mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="56"
+              height="56"
+              viewBox="0 0 56 56"
+              fill="none"
+            >
+              <path
+                d="M42 54.25C48.7655 54.25 54.25 48.7655 54.25 42C54.25 35.2345 48.7655 29.75 42 29.75C35.2345 29.75 29.75 35.2345 29.75 42C29.75 48.7655 35.2345 54.25 42 54.25Z"
+                stroke="#ACACAC"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M42 47.25C44.8994 47.25 47.25 44.8994 47.25 42C47.25 39.1006 44.8994 36.75 42 36.75C39.1006 36.75 36.75 39.1006 36.75 42C36.75 44.8994 39.1006 47.25 42 47.25Z"
+                stroke="#ACACAC"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M9.625 54.25C13.9742 54.25 17.5 50.7243 17.5 46.375C17.5 42.0257 13.9742 38.5 9.625 38.5C5.27576 38.5 1.75 42.0257 1.75 46.375C1.75 50.7243 5.27576 54.25 9.625 54.25Z"
+                stroke="#ACACAC"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M17.451 47.25H30.9283"
+                stroke="#ACACAC"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M54.25 42V12.25C54.25 11.3218 53.8813 10.4315 53.225 9.77513C52.5686 9.11876 51.6782 8.75 50.75 8.75H36.1667C35.3467 8.74993 34.5529 9.03765 33.9236 9.56303C33.2941 10.0884 32.8692 10.818 32.7227 11.6247L31.2223 19.8753C31.076 20.6812 30.6516 21.4102 30.0232 21.9355C29.3949 22.4608 28.602 22.749 27.783 22.75H12.25C10.3935 22.75 8.61301 23.4876 7.30025 24.8003C5.9875 26.113 5.25 27.8936 5.25 29.75V39.83"
+                stroke="#ACACAC"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M8.75 1.75H12.25C13.1782 1.75 14.0685 2.11875 14.7249 2.77513C15.3812 3.43149 15.75 4.32175 15.75 5.25V8.75"
+                stroke="#ACACAC"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M38.5 19.25H47.25"
+                stroke="#ACACAC"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M13.4167 8.75H18.0833C18.3928 8.75 18.6895 8.87292 18.9083 9.09172C19.1271 9.31049 19.25 9.60724 19.25 9.91667V22.75H12.25V9.91667C12.25 9.60724 12.3729 9.31049 12.5917 9.09172C12.8105 8.87292 13.1072 8.75 13.4167 8.75Z"
+                stroke="#ACACAC"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M9.625 47.25C9.14174 47.25 8.75 46.8582 8.75 46.375C8.75 45.8918 9.14174 45.5 9.625 45.5"
+                stroke="#ACACAC"
+                stroke-width="1.5"></path>
+              <path
+                d="M9.625 47.25C10.1083 47.25 10.5 46.8582 10.5 46.375C10.5 45.8918 10.1083 45.5 9.625 45.5"
+                stroke="#ACACAC"
+                stroke-width="1.5"></path>
+            </svg>
+          </div>
+
+          <h3 class="mb-4">Ziemie rolne</h3>
+          <p class="text-lg">
+            Oferujemy ziemie rolne, które mogą być doskonałym źródłem inwestycji
+            dla rolników czy przedsiębiorstw z branży spożywczej
+          </p>
+        </div>
+        <div>
+          <div class="mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="56"
+              height="56"
+              viewBox="0 0 56 56"
+              fill="none"
+            >
+              <path
+                d="M11.6667 15.75C15.5327 15.75 18.6667 12.616 18.6667 8.75C18.6667 4.88402 15.5327 1.75 11.6667 1.75C7.8007 1.75 4.66669 4.88402 4.66669 8.75C4.66669 12.616 7.8007 15.75 11.6667 15.75Z"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M11.6667 54.25C15.5327 54.25 18.6667 51.1161 18.6667 47.25C18.6667 43.3839 15.5327 40.25 11.6667 40.25C7.8007 40.25 4.66669 43.3839 4.66669 47.25C4.66669 51.1161 7.8007 54.25 11.6667 54.25Z"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M11.6667 15.75V40.25"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M44.3333 54.25C48.1994 54.25 51.3333 51.1161 51.3333 47.25C51.3333 43.3839 48.1994 40.25 44.3333 40.25C40.4672 40.25 37.3333 43.3839 37.3333 47.25C37.3333 51.1161 40.4672 54.25 44.3333 54.25Z"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M44.3333 32.1813C43.8501 32.1813 43.4583 31.7896 43.4583 31.3063C43.4583 30.8231 43.8501 30.4313 44.3333 30.4313"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M44.3333 32.1813C44.8165 32.1813 45.2083 31.7896 45.2083 31.3063C45.2083 30.8231 44.8165 30.4313 44.3333 30.4313"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M44.3333 20.9032C43.8501 20.9032 43.4583 20.5114 43.4583 20.0282C43.4583 19.5449 43.8501 19.1532 44.3333 19.1532"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M44.3333 20.9032C44.8165 20.9032 45.2083 20.5114 45.2083 20.0282C45.2083 19.5449 44.8165 19.1532 44.3333 19.1532"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M44.3333 9.625C43.8501 9.625 43.4583 9.23326 43.4583 8.75C43.4583 8.26674 43.8501 7.875 44.3333 7.875"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+              <path
+                d="M44.3333 9.625C44.8165 9.625 45.2083 9.23326 45.2083 8.75C45.2083 8.26674 44.8165 7.875 44.3333 7.875"
+                stroke="#C6CAFF"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </div>
+
+          <h3 class="mb-4">Build to suit</h3>
+          <p class="text-lg">
+            Dostosowujemy tereny do indywidualnych potrzeb, umożliwiając
+            efektywną realizację ich inwestycyjnych wizji.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script is:inline src="/assets/js/modal.js"></script>

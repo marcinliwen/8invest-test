@@ -1,0 +1,49 @@
+---
+const data = [
+  "Założyciel marek, anioł biznesu i twórca funduszu inwestycyjnego, to nie tylko lider, ale także kreatywny umysł, który przekształca wizje w realne sukcesy.",
+  "Kreuje innowacyjne koncepcje, które stanowią fundament dla nowatorskich projektów inwestycyjnych.",
+  "Pełni rolę członka rady nadzorczej w Nesperta sp. z o.o., spółce matce marki Semilac, przyczyniając się do strategicznego rozwoju firmy.",
+  "Jako twórca firmy Semilac, wykazuje się mistrzowskim prowadzeniem biznesu, osiągając sukcesy zarówno na rynku krajowym, jak i międzynarodowym.",
+  "Jako pionier wprowadzania lakierów hybrydowych, jego wpływ w branży kosmetycznej sięga ponad 40 krajów, ustanawiając standardy jakości i innowacyjności.",
+  "W roli wizjonera przekłada swoje doświadczenia z branży kosmetycznej na nowoczesne podejście do inwestycji nieruchomościowych.",
+  "Jego zaangażowanie w społeczność biznesową sprawia, że jest cenionym liderem, dzielącym się wiedzą i wspierającym rozwój innych przedsiębiorców.",
+  "Wyróżnia się elastycznością i umiejętnością adaptacji do dynamicznych zmian na rynku, co sprawia, że jest gotów na wyzwania przyszłościowej działalności.",
+  
+];
+---
+
+<section class="bg-main-700 pt-[160px] pb-[154px] rounded-[32px]">
+  <div class="container wrapper">
+    <div class="max-w-[1174px] mx-auto">
+      <div class="flex flex-wrap lg:flex-nowrap">
+        <div class="lg:pr-[105px]">
+          <h2 class="mb-8">Dyrektor zarządzający</h2>
+          <p class="text-3xl">
+            Tomasz Gołębiewski to nie tylko partner inwestycyjny, lecz także
+            sprawdzony sojusznik, z którym zawsze się wygrywa. Jego wkład w 
+            rozwijanie przedsiębiorczości jest niepodważalny, a przekonanie o
+            wartości zespołu, uczciwości i profesjonalizmie stanowi fundamenty
+            sukcesu. Działalność 8Invest opiera się na wartościach,
+            profesjonalizmie i skuteczności, co pozwala inwestorom osiągać
+            wspólne cele i kształtować przyszłość nieruchomościowego świata
+            inwestycji.
+          </p>
+        </div>
+        <div
+          class="lg:min-w-[497px] w-full mb-[48px] mt-[-86px] lg:mb-0 order-first lg:order-none"
+        >
+          <img class="mx-auto lg:ml-0" src="/assets/images/person-1.png" />
+        </div>
+      </div>
+      <div class="pt-10">
+        <ol>
+            {data.map(item=>{
+                return(
+                    <li class="text-lg mb-6">{item}</li>
+                )
+            })}
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>

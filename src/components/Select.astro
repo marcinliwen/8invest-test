@@ -1,0 +1,32 @@
+---
+const { options, name, placeholder, className } = Astro.props;
+---
+
+<div class={`custom-select ${className ? className : ""}`}>
+  <!-- <input
+    class="hidden lg:inline"
+    type="text"
+    name={name}
+    value=""
+    placeholder={placeholder}
+    readonly
+  />
+  <ul class="custom-select-content hidden lg:block">
+    {options? options.map(option=>{
+      return( <li data-value={option}>{option}</li>)
+    }):
+  ""
+    }
+   
+  </ul>
+  <div class="custom-select-icon hidden lg:block"></div> -->
+  <select class="native-select" required>
+    <option disabled selected value="">{placeholder}</option>
+    {options? options.map(option=>{
+      return( <option value={option}>{option}</option>)
+    }):
+    ""
+    }
+    
+  </select>
+</div>

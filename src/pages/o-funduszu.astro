@@ -1,0 +1,229 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Teritory from "../components/Teritory.astro";
+import Person from "../components/Person.astro";
+import FundFeatures from "../components/FundFeatures.astro";
+import Director from "../components/Director.astro";
+import PersonReverse from "../components/PersonReverse.astro";
+
+import "../../public/assets/style/accordion.css";
+const category_1 = [
+  {
+    title:
+      "Doświadczenie i Ekspertyza",
+    description:
+      "Oferujemy ogromne doświadczenie i głęboką wiedzę w analizie trendów rynkowych, nieruchomości i strategiach rozwoju, co pozwala partnerom podejmować skuteczne decyzje inwestycyjne.",
+  },
+  {
+    title:
+      "Unikalne Lokalizacje",
+    description:
+      "Oferujemy ogromne doświadczenie i głęboką wiedzę w analizie trendów rynkowych, nieruchomości i strategiach rozwoju, co pozwala partnerom podejmować skuteczne decyzje inwestycyjne.",
+  },
+  {
+    title:
+      "Zróżnicowany Portfel",
+    description:
+      "Oferujemy ogromne doświadczenie i głęboką wiedzę w analizie trendów rynkowych, nieruchomości i strategiach rozwoju, co pozwala partnerom podejmować skuteczne decyzje inwestycyjne.",
+  },
+  {
+    title:
+      "Wsparcie i Doradztwo",
+    description:
+      "Oferujemy ogromne doświadczenie i głęboką wiedzę w analizie trendów rynkowych, nieruchomości i strategiach rozwoju, co pozwala partnerom podejmować skuteczne decyzje inwestycyjne.",
+  },
+  {
+    title:
+      "Innowacyjność i Zrównoważony Rozwój",
+    description:
+      "Oferujemy ogromne doświadczenie i głęboką wiedzę w analizie trendów rynkowych, nieruchomości i strategiach rozwoju, co pozwala partnerom podejmować skuteczne decyzje inwestycyjne.",
+  },
+  {
+    title:
+      "Sieć Kontaktów i Współpracy",
+    description:
+      "Oferujemy ogromne doświadczenie i głęboką wiedzę w analizie trendów rynkowych, nieruchomości i strategiach rozwoju, co pozwala partnerom podejmować skuteczne decyzje inwestycyjne.",
+  },
+  {
+    title:
+      "Personalizacja Projektów",
+    description:
+      "Oferujemy ogromne doświadczenie i głęboką wiedzę w analizie trendów rynkowych, nieruchomości i strategiach rozwoju, co pozwala partnerom podejmować skuteczne decyzje inwestycyjne.",
+  },
+  {
+    title:
+      "Dostosowane Rozwiązania Finansowe",
+    description:
+      "Oferujemy ogromne doświadczenie i głęboką wiedzę w analizie trendów rynkowych, nieruchomości i strategiach rozwoju, co pozwala partnerom podejmować skuteczne decyzje inwestycyjne.",
+  },
+];
+---
+
+<Layout title="O funduszu">
+  <section class="pt-[120px] pb-[106px]">
+    <div class="container wrapper">
+      <div class="max-w-[1005px] mx-auto text-center pb-12">
+        <h1 class="mb-3">O funduszu</h1>
+        <h3 class="mb-10">
+          Zapraszamy do zgłębienia naszych unikalnych ofert i skorzystania z
+          bogactwa doświadczenia, jakie oferujemy w dziedzinie nieruchomości.
+        </h3>
+        <p class="text-lg text-white/80">
+          Niezależnie od tego, czy planują Państwo rozwój mieszkaniowy,
+          komercyjny czy przemysłowy, nasze portfolio pełne jest różnorodnych
+          możliwości. Nasze projekty posiadają gotowe warunki techniczne,
+          przyłącza oraz decyzje środowiskowe, co sprawia, że proces
+          inwestycyjny staje się wyjątkowo płynny i efektywny.
+        </p>
+      </div>
+      <img src="/assets/images/fundusz.png" class="rounded-[24px]" />
+    </div>
+  </section>
+  <section class="mb-[87px]">
+    <div class="container wrapper">
+      <div class="flex w-full flex-col lg:flex-row">
+        <div class="w-full max-w-[748px] xl:flex-shrink-0 mb-12 lg:mb-0">
+          <h3 class="mb-5">Tytuł artykułu</h3>
+          <p class="text-2xl mb-5">
+            W świetle dynamicznego rozwoju spółki 8Invest, specjalizującej się w
+            land development, poszukujemy nowych obszarów przeznaczonych do
+            przekształcenia pod zabudowę oraz inwestycji, które niosą ze sobą
+            potencjał rozwoju.
+          </p>
+          <p class="text-lg text-white/80 mb-12">
+            Obecnie skoncentrowani jesteśmy na identyfikacji działek o
+            powierzchni przekraczającej 10,000 m2, z perspektywą zabudowy o
+            charakterze mieszkaniowym oraz komercyjnym. W szczególności
+            interesują nas grunty poddawane przekształceniom oraz tereny
+            budowlane przeznaczone pod obiekty typu Build to Suit (BTS) oraz
+            inwestycje usługowo-mieszkaniowe. Zapraszamy do przedstawienia nam
+            swojej oferty - prosimy o przesłanie informacji na adres e-mail <a
+              href="mailto:property@8invest.pl"
+              class="underline">property@8invest.pl</a
+            > lub skorzystanie z <a href="/kontakt" class="link underline"
+              >formularza kontaktowego</a
+            >.
+          </p>
+          <img
+            src="/assets/images/ground-1.png"
+            class="rounded-[24px] w-full"
+          />
+        </div>
+        <div class="w-full lg:pl-[95px] md:grid grid-cols-2 md:gap-12 lg:block">
+          <div
+            class="p-8 border border-white rounded-[24px] w-full mb-12 md:mb-0 lg:mb-12"
+          >
+            <div class="flex justify-between mb-6">
+              <p class="text-xl">Najważniejsze cechy</p>
+              <div class="hidden md:flex items-center gap-[4px]">
+                <span class="h-[1px] w-[78px] block bg-second-200"></span>
+                <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"
+                ></span>
+                <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"
+                ></span>
+              </div>
+            </div>
+            <img src="/assets/images/features-1.png" class="w-full" />
+          </div>
+          <div class="p-8 border border-white rounded-[24px] w-full">
+            <div class="flex justify-between mb-6">
+              <p class="text-xl">Najważniejsze cechy</p>
+              <div class="hidden md:flex items-center gap-[4px]">
+                <span class="h-[1px] w-[78px] block bg-second-200"></span>
+                <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"
+                ></span>
+                <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"
+                ></span>
+              </div>
+            </div>
+            <img src="/assets/images/features-1.png" class="w-full" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <FundFeatures />
+  <Director />
+  <PersonReverse />
+  <section class="pt-[137px] pb-[122px]">
+    <div class="container wrapper">
+      <div class="max-w-[1174px] mx-auto">
+        <div class="md:flex">
+          <div class="md:pr-10 lg:pr-[90px]">
+            <h2 class="mb-8">Strategiczna przewaga</h2>
+            <p class="text-xl mb-16">
+              Nazwa "8Invest" została starannie wybrana, aby odzwierciedlić
+              strategiczną wartość, jaką nasz fundusz inwestycyjny niesie dla
+              swoich inwestorów. Liczba "8" symbolizuje nie tylko niekończący
+              się potencjał wzrostu, lecz również doskonałość i trwałość naszych
+              strategii inwestycyjnych.
+            </p>
+
+            <div class="accordion grid gap-4 w-full">
+              {
+                category_1.map((item, index) => (
+                  <>
+                    <input type="radio" id={`acc1_${index}`} name="acc1" />
+                    <div class="accordion-item">
+                      <label
+                        for={`acc1_${index}`}
+                        class="accordion-title lagusans cursor-pointer flex items-center"
+                      >
+                        <p class="flex-1 text-lg font-medium">{item.title}</p>
+                        <svg
+                          class="ml-auto acccordion-icon"
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="25"
+                          viewBox="0 0 24 25"
+                          fill="none"
+                        >
+                          <g clip-path="url(#clip0_369_9186)">
+                            <path
+                              d="M12 23.7211V1.25708"
+                              stroke="#C6CAFF"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M1 11.7571L11.249 23.4001C11.3428 23.5065 11.4583 23.5917 11.5876 23.6501C11.7169 23.7085 11.8571 23.7386 11.999 23.7386C12.1409 23.7386 12.2811 23.7085 12.4104 23.6501C12.5397 23.5917 12.6552 23.5065 12.749 23.4001L23 11.7571"
+                              stroke="#C6CAFF"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </g>
+                          <defs>
+                            <clipPath id="clip0_369_9186">
+                              <rect
+                                width="24"
+                                height="24"
+                                fill="white"
+                                transform="translate(0 0.5)"
+                              />
+                            </clipPath>
+                          </defs>
+                        </svg>
+                      </label>
+                      <label
+                        for="acc_close"
+                        class="accordion-close h-[80px] cursor-pointer"
+                      />
+                      <div class="accordion-content  pt-4 pr-8 lg:pr-16">
+                        <p class="text-lg text-white/80">{item.description}</p>
+                      </div>
+                    </div>
+                  </>
+                ))
+              }
+              <input id="acc_close" type="radio" name="acc1" />
+            </div>
+          </div>
+          <div class=" hidden md:block lg:flex-shrink-0 md:min-w-[35%]">
+            <img src="/assets/images/strategy.png" class="rounded-[24px]"  width="406"/>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

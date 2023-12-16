@@ -1,0 +1,77 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Teritory from "../components/Teritory.astro";
+import Person from "../components/Person.astro";
+---
+
+<Layout title="Zakupy gruntów">
+  <section class="pt-[120px] pb-[127px]">
+    <div class="container wrapper">
+      <div class="max-w-[1005px] mx-auto text-center">
+        <h1 class="mb-3">Zakup gruntów</h1>
+        <h3 class="mb-10">
+          Optymalizuj swój <em>portfel nieruchomościowy</em> z nami!
+        </h3>
+      </div>
+    </div>
+  </section>
+  <section class="mb-[87px]">
+    <div class="container wrapper">
+      <div class="flex w-full flex-col lg:flex-row">
+        <div class="w-full max-w-[748px] xl:flex-shrink-0 mb-12 lg:mb-0">
+          <h3 class="mb-5">Tytuł artykułu</h3>
+          <p class="text-2xl mb-5">
+            W świetle dynamicznego rozwoju spółki 8Invest, specjalizującej się w
+            land development, poszukujemy nowych obszarów przeznaczonych do
+            przekształcenia pod zabudowę oraz inwestycji, które niosą ze sobą
+            potencjał rozwoju.
+          </p>
+          <p class="text-lg text-white/80 mb-12">
+            Obecnie skoncentrowani jesteśmy na identyfikacji działek o
+            powierzchni przekraczającej 10,000 m2, z perspektywą zabudowy o
+            charakterze mieszkaniowym oraz komercyjnym. W szczególności
+            interesują nas grunty poddawane przekształceniom oraz tereny
+            budowlane przeznaczone pod obiekty typu Build to Suit (BTS) oraz
+            inwestycje usługowo-mieszkaniowe. Zapraszamy do przedstawienia nam
+            swojej oferty - prosimy o przesłanie informacji na adres e-mail <a
+              href="mailto:property@8invest.pl"
+              class="underline">property@8invest.pl</a
+            > lub skorzystanie z <a href="/kontakt" class="link underline"
+              >formularza kontaktowego</a
+            >.
+          </p>
+          <img
+            src="/assets/images/ground-1.png"
+            class="rounded-[24px] w-full"
+          />
+        </div>
+        <div class="w-full lg:pl-[95px] md:grid grid-cols-2 md:gap-12 lg:block">
+            <div class="p-8 border border-white rounded-[24px] w-full mb-12 md:mb-0 lg:mb-12">
+                <div class="flex justify-between mb-6">
+                    <p class="text-xl">Najważniejsze cechy</p>
+                    <div class="hidden md:flex items-center gap-[4px]">
+                        <span class="h-[1px] w-[78px] block bg-second-200"></span>
+                        <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"></span>
+                        <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"></span>
+                    </div>
+                </div>
+                <img src="/assets/images/features-1.png" class="w-full"/>
+            </div>
+            <div class="p-8 border border-white rounded-[24px] w-full">
+                <div class="flex justify-between mb-6">
+                    <p class="text-xl">Najważniejsze cechy</p>
+                    <div class="hidden md:flex items-center gap-[4px]">
+                        <span class="h-[1px] w-[78px] block bg-second-200"></span>
+                        <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"></span>
+                        <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"></span>
+                    </div>
+                </div>
+                <img src="/assets/images/features-1.png" class="w-full"/>
+            </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <Teritory />
+  <Person />
+</Layout>
