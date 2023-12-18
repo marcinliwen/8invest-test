@@ -40,6 +40,9 @@ window.onload = () => {
      * slider
      */
 
+    if(typeof Swiper !== 'undefined'){
+
+    
     const swiper = new Swiper('.swiper', {
         slidesPerView: 1,
         spaceBetween: 24,
@@ -82,6 +85,7 @@ window.onload = () => {
         }
 
     });
+}
 
 
 }
