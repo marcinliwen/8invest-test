@@ -1,0 +1,107 @@
+---
+
+---
+
+<section class="py-[211px] bg-main-800 rounded-[32px] relative">
+  <div class="container wrapper">
+    <div class="max-w-[1174px] mx-auto">
+      <div class="md:max-w-[50%]">
+        <h2 class="mb-[30px]">Referencje</h2>
+        <div class="flex items-center mb-[51px]">
+          <ul class="flex gap-2 items-center mr-5">
+            {
+              [1, 2, 3, 4, 5].map((item) => {
+                return (
+                  <li>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="28"
+                      height="27"
+                      viewBox="0 0 28 27"
+                      fill="none"
+                    >
+                      <path
+                        d="M13.2754 1.23013C13.5035 0.52818 14.4965 0.528183 14.7246 1.23013L17.4212 9.52927C17.5232 9.84319 17.8157 10.0557 18.1458 10.0557H26.872C27.6101 10.0557 27.917 11.0002 27.3198 11.434L20.2602 16.5632C19.9931 16.7572 19.8814 17.1011 19.9834 17.415L22.6799 25.7141C22.908 26.4161 22.1046 26.9998 21.5075 26.566L14.4478 21.4368C14.1808 21.2428 13.8192 21.2428 13.5522 21.4368L6.4925 26.566C5.89538 26.9998 5.09197 26.4161 5.32005 25.7141L8.0166 17.415C8.1186 17.1011 8.00686 16.7572 7.73982 16.5632L0.680159 11.434C0.0830438 11.0002 0.389922 10.0557 1.128 10.0557H9.85422C10.1843 10.0557 10.4768 9.84319 10.5788 9.52926L13.2754 1.23013Z"
+                        fill="#D9D9D9"
+                      />
+                    </svg>
+                  </li>
+                );
+              })
+            }
+          </ul>
+          <span class="text-lg leading-[27px] pt-[4px]">5,0</span>
+        </div>
+        <p class="text-2xl mb-14">
+          Jorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc
+          vulputate libero et velit interdum, ac aliquet odio mattis. Class
+          aptent taciti sociosqu ad litora torquent per conubia nostra, per
+          inceptos himenaeos.
+        </p>
+        <div class="flex items-center gap-[4px]">
+          <span class="h-[1px] w-[78px] block bg-second-200"></span>
+          <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"></span>
+          <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flex justify-end mb-[28px] gap-4 px-8 lg:absolute top-[171px] right-[44px] ">
+    <div class="swiper-button-prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" class="rotate-180 block">
+            <circle cx="12" cy="12" r="11.5" stroke="#C6CAFF"/>
+            <mask id="mask0_1_11" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="5" y="5" width="14" height="14">
+            <path d="M5 5L5 18.0909H18.0909V5H5Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask0_1_11)">
+            <path d="M17.6659 11.5455H5.41284" stroke="#C6CAFF" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11.1401 17.5455L17.4909 11.9551C17.5489 11.904 17.5954 11.841 17.6272 11.7705C17.6591 11.6999 17.6755 11.6234 17.6755 11.5461C17.6755 11.4687 17.6591 11.3922 17.6272 11.3216C17.5954 11.2511 17.5489 11.1881 17.4909 11.137L11.1401 5.5455" stroke="#C6CAFF" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            </svg>
+    </div>
+    <div class="swiper-button-next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" class="block">
+            <circle cx="12" cy="12" r="11.5" stroke="#C6CAFF"/>
+            <mask id="mask0_1_11" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="5" y="5" width="14" height="14">
+            <path d="M5 5L5 18.0909H18.0909V5H5Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask0_1_11)">
+            <path d="M17.6659 11.5455H5.41284" stroke="#C6CAFF" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11.1401 17.5455L17.4909 11.9551C17.5489 11.904 17.5954 11.841 17.6272 11.7705C17.6591 11.6999 17.6755 11.6234 17.6755 11.5461C17.6755 11.4687 17.6591 11.3922 17.6272 11.3216C17.5954 11.2511 17.5489 11.1881 17.4909 11.137L11.1401 5.5455" stroke="#C6CAFF" stroke-linecap="round" stroke-linejoin="round"/>
+            </g>
+            </svg>
+    </div>
+  </div>
+  <div class="swiper references-slider">
+    <span id="drag" class="flex items-center justify-center h-[64px] w-[64px] rounded-full bg-second-400 text-main-800 absolute top-[168px] z-30">Drag</span>
+    <div class="swiper-wrapper">
+      {
+        [1, 2, 3, 4].map((item) => {
+          return (
+            <div class="swiper-slide ">
+              <div class="rounded-[24px] border border-second-400 p-6 ">
+                
+                <img
+                  src="/assets/images/reference-1.png"
+                  class="rounded-[16px] mb-6 w-[224px] mr-[30px]"
+                />
+                <div class="max-w-[275px]">
+                  <p class="mb-3 text-white/80 ">
+                    Dorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Nunc vulputate libero et velit interdum, ac aliquet odio
+                    mattis.
+                  </p>
+                  <p class="text-xl">Justyna Pochanke</p>
+                  <p class="text-sm">manager lorem ipsum</p>
+                </div>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+    
+  </div>
+ 
+  
+</section>

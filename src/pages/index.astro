@@ -8,6 +8,7 @@ import Numbers from "../components/Numbers.astro";
 import Teritory from "../components/Teritory.astro";
 import PersonReverse from "../components/PersonReverse.astro";
 import Director from "../components/Director.astro";
+import References from "../components/References.astro";
 
 const itemList = [
   "Jesteśmy sprawdzonym partnerem w osiąganiu sukcesu.",
@@ -93,4 +94,10 @@ const itemList = [
   <Numbers />
   <Teritory />
   <Person />
+  <References />
 </Layout>
+
+<link rel="stylesheet" href="/assets/style/swiper-bundle.min.css"/>
+<script is:inline src="/assets/js/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="/assets/style/slider.css" />
+<script is:inline src="/assets/js/main.js"></script>
