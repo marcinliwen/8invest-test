@@ -20,7 +20,7 @@ const { title, isHome } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class={`${isHome ? 'bg-main-800' :''}`}>
+	<body class={`${isHome ? 'bg-main-800 isHome' :''}`}>
 		<Header/>
 		<slot />
 		<Footer />
