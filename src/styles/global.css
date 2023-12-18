@@ -297,7 +297,11 @@
         background-repeat: no-repeat;
         background-position: right;
     }
-
+    input.newsletter:focus {
+        outline: none;
+    }
+    
+    
     input.newsletter::placeholder {
         color: #C6CAFF;
     }
