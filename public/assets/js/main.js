@@ -1,6 +1,27 @@
 window.onload = () => {
-    console.log('mainpage loaded')
-
+    /**
+   * body overflow if mobile menu is open
+   */
+  const openMenu = document.getElementById("open-menu");
+  const closeMenu = document.getElementById("close-menu");
+  const menu = document.querySelector(".main-menu");
+  if (openMenu) {
+    openMenu.addEventListener("click", () => {
+      menu.classList.add("is-open");
+      document.body.classList.add("overflow-hidden");
+    });
+  }
+  if (closeMenu) {
+    closeMenu.addEventListener("click", () => {
+      menu.classList.remove("is-open");
+      document.body.classList.remove("overflow-hidden");
+    });
+  }
+    
+  
+  /**
+   * slider
+   */
     
         const swiper = new Swiper('.swiper', {
             slidesPerView: 1,

@@ -327,4 +327,40 @@
     .video-gradient{
         background:linear-gradient(0deg, rgb(0 0 0 / 52%) 91.57%, rgb(0 0 0 / 83%) 108.71%), #000650;
     }
+    .main-menu {
+        position: fixed;
+        top: 0px;
+        bottom: 0px;
+        left: 100%;
+        right: 0px;
+        width: 100%;
+        background: #DFE1FF;
+        color: #1823A7;
+        padding: 0px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        z-index: 9999;
+        transition-duration: 500ms;
+        transition-timing-function: ease-in-out;
+        border-radius: 32px 0 0 32px;
+    margin: 16px 0 16px 16px;
+    padding-right: 16px;
+    }
+
+    .main-menu.is-open {
+        left: 0;
+    }
+
+    @media(min-width: 768px) {
+        .main-menu {
+            position: static;
+            flex-direction: row;
+            width: auto;
+            background: none;
+            padding: 0;
+            color: inherit;
+        }
+    }
 }
