@@ -12,13 +12,13 @@ const data = [
 ];
 ---
 
-<section class="bg-main-700 pt-[160px] pb-[154px] rounded-[32px]">
+<section class="bg-main-700 pt-14 pb-20 lg:pt-[160px] lg:pb-[154px] rounded-[32px]">
   <div class="container wrapper">
     <div class="max-w-[1174px] mx-auto">
       <div class="flex flex-wrap lg:flex-nowrap">
         <div class="lg:pr-[105px]">
           <h2 class="mb-8">Dyrektor zarządzający</h2>
-          <p class="text-3xl">
+          <p class="lg:text-3xl">
             Tomasz Gołębiewski to nie tylko partner inwestycyjny, lecz także
             sprawdzony sojusznik, z którym zawsze się wygrywa. Jego wkład w 
             rozwijanie przedsiębiorczości jest niepodważalny, a przekonanie o
@@ -30,7 +30,7 @@ const data = [
           </p>
         </div>
         <div
-          class="lg:min-w-[497px] w-full mb-[48px] mt-[-86px] lg:mb-0 order-first lg:order-none"
+          class="lg:min-w-[497px] w-full mb-[48px] lg:mt-[-86px] lg:mb-0 order-first lg:order-none"
         >
           <img class="mx-auto lg:ml-0" src="/assets/images/person-1.png" />
         </div>
@@ -39,7 +39,7 @@ const data = [
         <ol>
             {data.map(item=>{
                 return(
-                    <li class="text-lg mb-6">{item}</li>
+                    <li class="lg:text-lg mb-6">{item}</li>
                 )
             })}
         </ol>

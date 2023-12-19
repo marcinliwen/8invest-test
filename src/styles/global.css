@@ -118,7 +118,7 @@
         border-radius: 159px;
         border: 1px solid #fff;
         padding: 3.75px 6px;
-        word-break: keep-all;
+        white-space: nowrap;
     }
     @media(min-width: 1024px){
         h1 {
