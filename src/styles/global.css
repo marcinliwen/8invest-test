@@ -120,48 +120,51 @@
         padding: 3.75px 6px;
         white-space: nowrap;
     }
-    @media(min-width: 1024px){
+
+    @media(min-width: 1024px) {
         h1 {
             font-size: 50px;
         }
-    
+
         h2 {
             font-size: 32px;
         }
-    
+
         h3 {
             font-size: 30px;
         }
-    
+
     }
-    header{
+
+    header {
         position: sticky;
-    top: -49px;
-    z-index: 40;
-    background: #2C39D8;
-   
+        top: -49px;
+        z-index: 40;
+        background: #2C39D8;
+
     }
-   
+
 }
 
 
 @layer components {
-    .isHome header{
+    .isHome header {
         background: #1823a7;
     }
+
     .wrapper {
         padding-left: 32px;
         padding-right: 32px;
     }
 
-    @media(min-width:1024px){
+    @media(min-width:1024px) {
         .wrapper {
             padding-left: 48px;
             padding-right: 48px;
         }
-    
+
     }
-    
+
     .btn {
         padding: 14px 24px;
         border-radius: 60px;
@@ -185,17 +188,30 @@
 
     .btn.white {
         border: 1px solid #fff;
-        background: #FFF;
+        background-color: #FFF;
         color: #1823A7;
+        transition:background-color ease-in 300ms, border-color ease-in 300ms;
     }
-    .btn.main{
+    .btn.white:hover{
+        background-color: #8d95f9;
+        border-color: #8d95f9;
+        transition:background-color ease-in 300ms, border-color ease-in 300ms;
+    }
+
+    .btn.main {
         color: #fff;
         background: #1823A7;
     }
+
     .btn.second {
         color: #1823A7;
-        background: #D4D6FD;
+        background-color: #D4D6FD;
         border: 1px solid #D4D6FD
+    }
+    .btn.second:hover{
+        background-color: #8d95f9;
+        border-color: #8d95f9;
+        transition:background-color ease-in 300ms, border-color ease-in 300ms;
     }
 
     .btn.line {
@@ -308,11 +324,12 @@
         background-repeat: no-repeat;
         background-position: right;
     }
+
     input.newsletter:focus {
         outline: none;
     }
-    
-    
+
+
     input.newsletter::placeholder {
         color: #C6CAFF;
     }
@@ -339,9 +356,11 @@
         font-weight: 500;
         text-decoration: underline;
     }
-    .video-gradient{
-        background:linear-gradient(0deg, rgb(0 0 0 / 52%) 91.57%, rgb(0 0 0 / 83%) 108.71%), #000650;
+
+    .video-gradient {
+        background: linear-gradient(0deg, rgb(0 0 0 / 52%) 91.57%, rgb(0 0 0 / 83%) 108.71%), #000650;
     }
+
     .main-menu {
         position: fixed;
         top: 0px;
@@ -360,14 +379,17 @@
         transition-duration: 500ms;
         transition-timing-function: ease-in-out;
         border-radius: 32px 0 0 32px;
-    margin: 16px 0 16px 16px;
-    padding-right: 16px;
+        margin: 16px 0 16px 16px;
+        padding-right: 16px;
     }
 
     .main-menu.is-open {
         left: 0;
     }
-
+.main-btn:active {
+    transform: scale(0.97);
+    transition: all ease-in 200ms;
+}
     @media(min-width: 768px) {
         .main-menu {
             position: static;
@@ -376,6 +398,46 @@
             background: none;
             padding: 0;
             color: inherit;
+        }
+
+        .main-btn:hover {
+            padding-right: 0px;
+            transition: padding-right ease-in 400ms;
+        }
+
+        .point {
+            position: absolute;
+            right: 0;
+            transition:background-color ease-in 400ms, right ease-in 400ms;
+        }
+
+        .main-btn {
+            position: relative;
+            padding-right: 44px;
+            transition: padding-right ease-in 400ms;
+        }
+        .btn-text.white{
+            color: #1823A7;
+            padding-right: 24px;
+            transition: background-color ease-in 400ms, border-color ease-in 400ms, padding-right ease-in 400ms;
+        }
+        .main-btn:hover .btn-text {
+            padding-right: 44px;
+            background: #8d95f9;
+            border-color: #8d95f9;
+            transition: padding-right ease-in 400ms, border-color ease-in 400ms, background-color ease-in 400ms,;
+        }
+        .btn-text.line{
+            transition: padding-right ease-in 400ms, border-color ease-in 400ms, background-color ease-in 400ms, color ease-in 400ms;
+        }
+        .main-btn:hover .btn-text.line{
+            color: #1823A7;
+            transition: padding-right ease-in 400ms, border-color ease-in 400ms, background-color ease-in 400ms, color ease-in 400ms;
+        }
+        .main-btn:hover .point {
+            right: 14px;
+            background-color: #fff;
+            transition: background-color ease-in 400ms, right ease-in 400ms;
         }
     }
 }
