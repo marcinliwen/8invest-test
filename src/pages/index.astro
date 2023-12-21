@@ -23,7 +23,8 @@ const itemList = [
 ---
 
 <Layout title="Home" isHome={true}>
-  <section class="pt-8 lg:pt-[120px] pb-[34px] relative z-20">
+  <div class="contain-paint w-full">
+  <section id="top" class="pt-8 lg:pt-[120px] pb-[34px] relative z-20">
     <div class="container wrapper">
       <div class="text-center pb-[87px]">
         <h1 class="mb-3">Inwestuj w ziemie, buduj przyszłość!</h1>
@@ -50,13 +51,14 @@ const itemList = [
       </div>
     </div>
   </section>
-  <section class="bg-main-900 rounded-[32px] pb-20 lg:pb-[167px] pt-[200px] lg:pt-[402px] relative z-10 mt-[125px]  md:mt-0">
-    <div class="w-[250px] h-[250px] md:w-[400px] md:h-[400px] lg:w-[700px] lg:h-[700px] video-gradient rounded-full overflow-hidden mx-auto mb-[52px] absolute top-[-125px] md:top-[-200px] lg:top-[-350px] left-1/2 -translate-x-1/2">
-      <video autoplay loop muted playsinline class="absolute object-fit w-full h-full left-0 top-0 ">
+  
+  <section class="bg-main-900 relative z-10 rounded-[32px] pb-20 lg:pb-[167px] pt-[200px] lg:pt-[402px] mt-[125px]  md:mt-0">
+    <div class="w-[250px] h-[250px] md:w-[400px] md:h-[400px] lg:w-[700px] lg:h-[700px]  rounded-full overflow-hidden mx-auto mb-[52px] bg-image">
+      <video autoplay loop muted playsinline class="absolute object-fit w-full h-full object-center top-0 ">
         <source src="/assets/video/home-2.mp4"/>
       </video>
     </div>
-    <div class="continer wrapper">
+    <div class="continer wrapper relative z-30">
       
       <div class="mb-[106px] flex flex-wrap lg:flex-nowrap items-center gap-14 max-w-[917px] mx-auto">
         <img src="/assets/images/8invest-icon.png" />
@@ -89,6 +91,7 @@ const itemList = [
       </div>
     </div>
   </section>
+</div>
   <Director />
   <PersonReverse />
   <Numbers />
