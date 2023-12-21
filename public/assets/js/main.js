@@ -82,12 +82,12 @@ window.onload = () => {
             on: {
                 init: function (swiper) {
                     leftDistance = swiper.slidesSizesGrid[0] + 12;
-                    document.getElementById('drag').style.left = leftDistance + "px";
+                    //document.getElementById('drag').style.left = leftDistance + "px";
                 },
                 resize: function (swiper) {
                     console.log(swiper.slidesSizesGrid[0])
                     leftDistance = swiper.slidesSizesGrid[0] + 12;
-                    document.getElementById('drag').style.left = leftDistance + "px";
+                    //document.getElementById('drag').style.left = leftDistance + "px";
                 }
             }
 
@@ -109,32 +109,56 @@ gsap.from('.line-up',
         stagger: 0.2
     })
 
-}
-let tl = gsap.timeline({
-    // yes, we can add it to an entire timeline!
-    scrollTrigger: {
-      trigger: "#top",
-    //pin: true, // pin the trigger element while active
-      //start: "top top", // when the top of the trigger hits the top of the viewport
-    //start: "top top",
-     //markers: true,
-      //end: "-=100%", // end after scrolling 500px beyond the start
-      scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-      /* snap: {
-        snapTo: "labels", // snap to the closest label in the timeline
-        duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-        delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
-        ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
-      }, */
-    },
+    const isTouchDevice = 'ontouchstart' in window;
+const createCursorFollower = () => {
+  const el = document.querySelector('.cursor-follower');
+  // Each time the mouse coordinates are updated,
+  // we need to pass the values to gsap in order
+  // to animate the element
+  window.addEventListener('mousemove', (e) => {
+    const { target, x, y } = e;
+    // Check if target is inside a link or button
+    const isTargetLinkOrBtn = target?.closest('.references-slider') ;
+    // GSAP config
+    gsap.to(el, {
+      x: x - 16,
+      y: y - 16,
+      //duration: 0.7,
+      //ease: 'power4', // More easing options here: https://gsap.com/docs/v3/Eases/
+      opacity: isTargetLinkOrBtn ? 1 : 0,
+    });
   });
-  
-  // add animations and labels to the timeline
-  tl.addLabel("start")
-    .from(".bg-image", {scaleX: 1, scaleY: 1,})
-    .to(".bg-image",{scaleX: 2, scaleY: 2, height: '100vh', width: '100vh'})
-    .addLabel("end");
-  
-  
+  // Hidding the cursor element when the mouse cursor
+  // is moved out of the page
+  document.addEventListener('mouseleave', (e) => {
+    gsap.to(el, {
+      //duration: 0.7,
+      opacity: 0,
+    });
+  });
+};
+
+const slideScale =()=>{
+    const swiperContainer = document.querySelector('.references-slider')
+    const slidesList = document.querySelectorAll('.swiper-slide')
+    swiperContainer.addEventListener('click', (e)=>{
+        console.log('click')
+        slidesList.forEach((item=>{
+            item.style.transform ='scale(0.9)'
+        }))
+    })
+    swiperContainer.addEventListener('mouseup', (e)=>{
+        slidesList.forEach((item=>{
+            item.style.transform ='scale(1)'
+        }))
+    })
+}
+// Only invoke the function if isn't a touch device
+if (!isTouchDevice) {
+  createCursorFollower();
+  slideScale();
+}
+}
+
     
 }
