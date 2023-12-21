@@ -1,5 +1,12 @@
 window.onload = () => {
     /**
+     * line animation 
+     */
+    const lineWidth = document.querySelectorAll('.line-animation-left');
+    if (lineWidth.length > 0) {
+        document.documentElement.style.setProperty('--line-width', lineWidth[0].offsetWidth + "px");
+    }
+    /**
    * modals
    */
     const triggers = document.getElementsByClassName("modal-trigger");
@@ -86,20 +93,22 @@ window.onload = () => {
 
         });
     }
+if(typeof gsap !== 'undefined' || gsap !== null){
+//gsap.registerPlugin(Observer)
+gsap.registerPlugin(ScrollTrigger);
 
-    //gsap.registerPlugin(Observer)
-    gsap.registerPlugin(ScrollTrigger);
+gsap.from('.line-up',
 
-    gsap.from('.line-up', 
-    
     {
         scrollTrigger: '.line-up',
         duration: 0.5,
-        opacity: 0, 
-        rotationX: -100, 
-        force3D: true, 
-        transformOrigin: "top center -100", 
-        stagger: 0.1
+        opacity: 0,
+        rotationX: -100,
+        force3D: true,
+        transformOrigin: "top center -100",
+        stagger: 0.2
     })
 
+}
+    
 }

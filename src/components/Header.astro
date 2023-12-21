@@ -69,7 +69,7 @@ const currentPath = pathname.slice(1)
                 <ul class="flex flex-col md:flex-row gap-[46px] items-center">
                     {menu.map(item=>{
                         return(
-                            <li><a href={item.link} class={`text-base ${currentPath === item.link.slice(1) ? 'current':''}`}>{item.name}</a></li>
+                            <li><a href={item.link} class={`text-base link ${currentPath === item.link.slice(1) ? 'current':''}`}>{item.name}</a></li>
                         )
                     })}
                     <li><a href="/kontakt" class="btn small white">Kontakt</a></li>
