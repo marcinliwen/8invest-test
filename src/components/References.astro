@@ -2,8 +2,8 @@
 
 ---
 
-<section class="py-20 lg:py-[211px] bg-main-800 rounded-[32px] relative">
-  <div class="container wrapper">
+<section class="py-20 lg:pt-[239px] lg:pb-[211px] bg-main-800 rounded-[32px] relative">
+  <div class="container wrapper absolute ">
     <div class="max-w-[1174px] mx-auto">
       <div class="md:max-w-[50%]">
         <h2 class="mb-[30px]">Referencje</h2>
@@ -72,15 +72,13 @@
             </svg>
     </div>
   </div>
-  <div class="swiper references-slider cursor-grab">
-    
-    
-    <div class="swiper-wrapper">
+  <div class="swiper references-slider ">
+    <div class="swiper-wrapper cursor-grab">
       {
-        [1, 2, 3, 4].map((item) => {
+        [1, 2, 3, 4, 5, 6, 7].map((item) => {
           return (
-            <div class="swiper-slide ">
-              <div class="rounded-[24px] border border-second-400 p-6 ">
+            <div class="swiper-slide px-3 bg-main-800 ">
+              <div class="rounded-[24px] border border-second-400 p-6 reference-slide">
                 
                 <img
                   src="/assets/images/reference-1.png"

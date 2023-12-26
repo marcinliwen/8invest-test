@@ -52,9 +52,13 @@ window.onload = () => {
 
         const swiper = new Swiper('.swiper', {
             slidesPerView: 1,
-            spaceBetween: 24,
+            spaceBetween: 0,
             speed: 600,
-
+            freeMode: {
+                enabled: false,
+                sticky: false,
+                momentumBounce: false,
+            },
             // If we need pagination
             breakpoints: {
                 768: {
@@ -63,6 +67,11 @@ window.onload = () => {
                 1024: {
                     slidesPerView: 1.4,
                     slidesOffsetAfter: 44,
+                    freeMode: {
+                        enabled: true,
+                        sticky: false,
+                        momentumBounce: false,
+                    },
                 },
                 1280: {
                     slidesPerView: 2.2,
@@ -92,73 +101,62 @@ window.onload = () => {
             }
 
         });
+        swiper.on('touchStart', (_) => {
+            TweenMax.to('.reference-slide', 0.4, { scale: 0.9 })
+        })
+        swiper.on('touchEnd', (_) => {
+            TweenMax.to('.reference-slide', 0.4, { scale: 1 })
+        })
     }
-if(typeof gsap !== 'undefined' || gsap !== null){
-//gsap.registerPlugin(Observer)
-gsap.registerPlugin(ScrollTrigger);
 
-gsap.from('.line-up',
 
-    {
-        scrollTrigger: '.line-up',
-        duration: 0.5,
-        opacity: 0,
-        rotationX: -100,
-        force3D: true,
-        transformOrigin: "top center -100",
-        stagger: 0.2
-    })
+    if (typeof gsap !== 'undefined' || gsap !== null) {
+        gsap.registerPlugin(ScrollTrigger);
 
-    const isTouchDevice = 'ontouchstart' in window;
-const createCursorFollower = () => {
-  const el = document.querySelector('.cursor-follower');
-  // Each time the mouse coordinates are updated,
-  // we need to pass the values to gsap in order
-  // to animate the element
-  window.addEventListener('mousemove', (e) => {
-    const { target, x, y } = e;
-    // Check if target is inside a link or button
-    const isTargetLinkOrBtn = target?.closest('.references-slider') ;
-    // GSAP config
-    gsap.to(el, {
-      x: x - 16,
-      y: y - 16,
-      //duration: 0.7,
-      //ease: 'power4', // More easing options here: https://gsap.com/docs/v3/Eases/
-      opacity: isTargetLinkOrBtn ? 1 : 0,
-    });
-  });
-  // Hidding the cursor element when the mouse cursor
-  // is moved out of the page
-  document.addEventListener('mouseleave', (e) => {
-    gsap.to(el, {
-      //duration: 0.7,
-      opacity: 0,
-    });
-  });
-};
+        gsap.from('.line-up',
+            {
+                scrollTrigger: '.line-up',
+                duration: 0.5,
+                opacity: 0,
+                rotationX: -100,
+                force3D: true,
+                transformOrigin: "top center -100",
+                stagger: 0.2
+            })
 
-const slideScale =()=>{
-    const swiperContainer = document.querySelector('.references-slider')
-    const slidesList = document.querySelectorAll('.swiper-slide')
-    swiperContainer.addEventListener('click', (e)=>{
-        console.log('click')
-        slidesList.forEach((item=>{
-            item.style.transform ='scale(0.9)'
-        }))
-    })
-    swiperContainer.addEventListener('mouseup', (e)=>{
-        slidesList.forEach((item=>{
-            item.style.transform ='scale(1)'
-        }))
-    })
-}
-// Only invoke the function if isn't a touch device
-if (!isTouchDevice) {
-  createCursorFollower();
-  slideScale();
-}
-}
+        const isTouchDevice = 'ontouchstart' in window;
+        const createCursorFollower = () => {
+            const el = document.querySelector('.cursor-follower');
+            window.addEventListener('mousemove', (e) => {
+                const { target, x, y } = e;
+                const isTargetLinkOrBtn = target?.closest('.cursor-grab');
+                // GSAP config
+                gsap.to(el, {
+                    duration: 0.3,
+                    x: x - 16,
+                    y: y - 16,
+                })
+            });
 
-    
+            document.querySelector('.cursor-grab').addEventListener('mouseenter', (e) => {
+                gsap.to(el, {
+                    duration: 0.3,
+                    opacity: 1,
+                    scale: 1
+                });
+            });
+            document.querySelector('.cursor-grab').addEventListener('mouseleave', (e) => {
+                gsap.to(el, {
+                    duration: 0.3,
+                    opacity: 0,
+                    scale: 0.2
+                });
+            });
+        };
+
+        // Only invoke the function if isn't a touch device
+        if (!isTouchDevice) {
+            createCursorFollower();
+        }
+    }
 }
