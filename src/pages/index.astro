@@ -23,9 +23,9 @@ const itemList = [
 ---
 
 <Layout title="Home" isHome={true}>
-  <div class="contain-paint w-full relative">
-    
-  <section id="top" class="pt-8 lg:pt-[120px] pb-[34px] relative z-20">
+ 
+    <div class="relative rounded-[32px] overflow-hidden">
+  <section id="top" class="pt-8 lg:pt-[120px] pb-[34px] relative z-30">
     <div class="container wrapper">
       <div class="text-center pb-[87px]">
         <h1 class="mb-3">Inwestuj w ziemie, buduj przyszłość!</h1>
@@ -53,8 +53,8 @@ const itemList = [
     </div>
   </section>
   
-  <section class="bg-main-900 relative z-10 rounded-[32px] pb-20 lg:pb-[167px] pt-[200px] lg:pt-[402px] mt-[125px]  md:mt-0">
-    <div class="w-[50vw] h-[50vw] overflow-hidden mx-auto  bg-image">
+  <section class=" bg-main-900 relative z-20 rounded-[32px] pb-20 lg:pb-[167px] pt-[200px] lg:pt-[402px] mt-[125px]  md:mt-0">
+    <div class="bg-image z-20">
       <video autoplay loop muted playsinline class="absolute object-fit w-full h-full object-center top-0 ">
         <source src="/assets/video/home-2.mp4"/>
       </video>
@@ -92,7 +92,8 @@ const itemList = [
       </div>
     </div>
   </section>
-</div>
+  </div>
+
   <Director />
   <PersonReverse />
   <Numbers />

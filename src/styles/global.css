@@ -412,16 +412,21 @@
 
     .bg-image {
         overflow: hidden;
-        background-color: #010a2f;
-        border-radius: 100%;
+        background-color: #000554;
         position: absolute;
-        top: -25%;
         left: 50%;
+        right: 0;
+        top: 0%;
         transform: translateX(-50%);
+        opacity: 1;
+        bottom: 0;
+        height: 100vh;
+        width: 100vh;
+        border-radius: 100%;
     }
 
     .bg-image>video {
-        object-fit: contain;
+        object-fit: cover;
     }
 
     .contain-paint {
@@ -430,11 +435,12 @@
 
     @media(min-width: 768px) {
         .bg-image {
-            border-radius: 100%;
-            overflow: hidden;
-            background-color: #010a2f;
+            height: 100vw;
+        width: 100vw;
         }
-
+        .bg-image>video {
+            object-fit: contain;
+        }
         .main-menu {
             position: static;
             flex-direction: row;
@@ -513,7 +519,7 @@
             transition: all .3s ease;
         }
 
-        
+
     }
 
 }
@@ -549,10 +555,11 @@
         transform: translateX(var(--line-width));
     }
 }
+
 .cursor-follower {
     position: fixed;
     width: 64px;
-    height:64px;
+    height: 64px;
     border-radius: 100%;
     background-color: #C6CAFF;
     color: #1823A7;

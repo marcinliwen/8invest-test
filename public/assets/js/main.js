@@ -113,6 +113,150 @@ window.onload = () => {
     if (typeof gsap !== 'undefined' || gsap !== null) {
         gsap.registerPlugin(ScrollTrigger);
 
+        function desktop(){
+            var tl = gsap.timeline({
+                scrollTrigger: {
+                    markers: true,
+                    trigger: "#top",
+                    //pin: true, // pin the trigger element while active
+                    start: "top 120px", // when the top of the trigger hits the top of the viewport
+                    end: "bottom -=500px", // end after scrolling 500px beyond the start
+                    scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+                    //snap: {
+                    //    snapTo: "labels", // snap to the closest label in the timeline
+                    //    duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+                     //   delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+                    //    ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
+                    //}
+                }
+            })
+            tl
+                .from('.bg-image', {
+                    width: '50vw',
+                    height: '50vw',
+                    scale: '1, 1',
+                   top: '-28%'
+                    
+                })
+               .to('.bg-image', {
+                width: '100%',
+                height: '100%',
+                    borderRadius: '0',
+                   top: '0'
+                }) 
+
+                return tl;
+        }
+        function mobile(){
+            var tl = gsap.timeline({
+                scrollTrigger: {
+                    markers: true,
+                    trigger: "#top",
+                    //pin: true, // pin the trigger element while active
+                    start: "top 120px", // when the top of the trigger hits the top of the viewport
+                    end: "bottom ", // end after scrolling 500px beyond the start
+                    scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+                    //snap: {
+                    //    snapTo: "labels", // snap to the closest label in the timeline
+                    //    duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+                     //   delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+                    //    ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
+                    //}
+                }
+            })
+            tl
+                .from('.bg-image', {
+                    width: '120px',
+                    height: '120px',
+                    top: '-10%'
+                    
+                })
+               .to('.bg-image', {
+                width: '100%',
+                height: '100%',
+                borderRadius: '0',
+                   top: '10%',
+                }) 
+
+                return tl;
+        }
+        
+        
+        
+        
+        let mm = gsap.matchMedia();
+
+       mm.add('(min-width: 768px)', ()=>{
+        var tl = gsap.timeline({
+            scrollTrigger: {
+                markers: true,
+                trigger: "#top",
+                //pin: true, // pin the trigger element while active
+                start: "top 120px", // when the top of the trigger hits the top of the viewport
+                end: "bottom -=500px", // end after scrolling 500px beyond the start
+                scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+                //snap: {
+                //    snapTo: "labels", // snap to the closest label in the timeline
+                //    duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+                 //   delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+                //    ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
+                //}
+            }
+        })
+        tl
+            .from('.bg-image', {
+                width: '50vw',
+                height: '50vw',
+                scale: '1, 1',
+               top: '-28%'
+                
+            })
+           .to('.bg-image', {
+            width: '100%',
+            height: '100%',
+                borderRadius: '0',
+               top: '0'
+            }) 
+
+       });
+        mm.add('(max-width: 767px)',()=>{
+            var tl = gsap.timeline({
+                scrollTrigger: {
+                    markers: true,
+                    trigger: "#top",
+                    //pin: true, // pin the trigger element while active
+                    start: "top 120px", // when the top of the trigger hits the top of the viewport
+                    end: "bottom", // end after scrolling 500px beyond the start
+                    scrub: 1, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
+                    //snap: {
+                    //    snapTo: "labels", // snap to the closest label in the timeline
+                    //    duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+                     //   delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+                    //    ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
+                    //}
+                }
+            })
+            tl
+                .from('.bg-image', {
+                    width: '80vw',
+                    height: '80vw',
+                    top: '-10%',
+                   
+                    
+                })
+               .to('.bg-image', {
+               
+                borderRadius: '0',
+                   top: '-10%',
+                  
+                }) 
+        } )
+
+
+        
+
+
+
         gsap.from('.line-up',
             {
                 scrollTrigger: '.line-up',
