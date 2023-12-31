@@ -23,90 +23,125 @@ const itemList = [
 ---
 
 <Layout title="Home" isHome={true}>
- 
-    <div class="relative rounded-[32px] overflow-hidden">
-  <section id="top" class="pt-8 lg:pt-[120px] pb-[34px] relative z-30">
-    <div class="container wrapper">
-      <div class="text-center pb-[87px]">
-        <h1 class="mb-3">Inwestuj w ziemie, buduj przyszłość!</h1>
-        <h3 class="max-w-[687px] mx-auto mb-8">
-          Z nami skorzystasz z doświadczenia naszego zespołu, który zdobył
-          zaufanie partnerów w branży.
-        </h3>
-        <a class="flex items-center  max-w-max mx-auto main-btn">
-          <span class="btn white btn-text">Dowiedz się więcej</span>
-          <span class="w-6 h-6 bg-second-600 rounded-full flex-shrink-0 block point"
-          ></span>
-        </a>
-      </div>
-      <div class="mt-auto flex justify-between items-center">
-        <ul class="flex gap-10">
-          <li><a class="text-sm">Facebook</a></li>
-          <li><a class="text-sm">Linked In</a></li>
-        </ul>
-        <div class="flex items-center gap-[4px]">
-          <span class="h-[1px] w-[78px] block bg-second-200"></span>
-          <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"></span>
-          <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"></span>
-        </div>
-      </div>
-    </div>
-  </section>
   
-  <section class=" bg-main-900 relative z-20 rounded-[32px] pb-20 lg:pb-[167px] pt-[200px] lg:pt-[402px] mt-[125px]  md:mt-0">
-    <div class="bg-image z-20">
-      <video autoplay loop muted playsinline class="absolute object-fit w-full h-full object-center top-0 ">
-        <source src="/assets/video/home-2.mp4"/>
+    <div class="relative overflow-hidden">
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        class="fixed object-cover w-full h-full object-center top-0 z-20 opacity-0 video-bg"
+      >
+        <source src="/assets/video/home-2.mp4" />
       </video>
-    </div>
-    <div class="continer wrapper relative z-30">
-      
-      <div class="mb-[106px] flex flex-wrap lg:flex-nowrap items-center gap-14 max-w-[917px] mx-auto">
-        <img src="/assets/images/8invest-icon.png" />
-        <div>
-          <h2 class="mb-[14px]">Fundusz Inwestycyjny 8Invest </h2>
-          <p class="lg:text-2xl">Celem funduszu  jest celowe inwestowanie w ziemię, dostosowane do indywidualnych potrzeb Partnerów Inwestycyjnych. Umożliwiając rozwój i skalowanie ich projektów.  Nasza działalność opiera się na wartościach, profesjonalizmie i skuteczności.</p>
+      <div class="video-cover"></div>
+      <section id="top" class="pt-8 lg:pt-[120px] pb-[34px] relative z-30">
+        <div class="home-mask">
+          <img src="/assets/images/home-mask.png" class="mask-img" />
         </div>
-      </div>
-      <div class="max-w-[1174px] mx-auto">
-        <div class="flex flex-col lg:flex-row-reverse gap-5">
-          <div class="mb-12 lg:mb-0">
-            <img src="/assets/images/home-2.png" class="mx-auto"/>
+        <div class="container wrapper relative z-30">
+          <div class="text-center pb-[87px]">
+            <h1 class="mb-3">Inwestuj w ziemie, buduj przyszłość!</h1>
+            <h3 class="max-w-[687px] mx-auto mb-8">
+              Z nami skorzystasz z doświadczenia naszego zespołu, który zdobył
+              zaufanie partnerów w branży.
+            </h3>
+            <a class="flex items-center max-w-max mx-auto main-btn">
+              <span class="btn white btn-text">Dowiedz się więcej</span>
+              <span
+                class="w-6 h-6 bg-second-600 rounded-full flex-shrink-0 block point"
+              ></span>
+            </a>
           </div>
-          <div class="flex-1 max-w-[742px] self-center lg:self-left">
-            <h3 class="mb-10">Strategiczna przewaga 8Invest:</h3>
-            <ol class="mb-10">
-              {
-                itemList.map((item) => {
-                  return <li class="lg:text-lg mb-2 leading-[30px]">{item}</li>;
-                })
-              }
-            </ol>
-            <div class="flex  gap-6 items-center">
-              <a class="btn white">Lorem ipsum</a>
-              <a class="btn line">Lorem ipsum</a>
+          <div class="mt-auto flex justify-between items-center">
+            <ul class="flex gap-10">
+              <li><a class="text-sm">Facebook</a></li>
+              <li><a class="text-sm">Linked In</a></li>
+            </ul>
+            <div class="flex items-center gap-[4px]">
+              <span class="h-[1px] w-[78px] block bg-second-200"></span>
+              <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"
+              ></span>
+              <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"
+              ></span>
             </div>
           </div>
-         
         </div>
-      </div>
-    </div>
-  </section>
-  </div>
+      </section>
 
-  <Director />
-  <PersonReverse />
-  <Numbers />
-  <Teritory />
-  <Person />
-  <References />
+      <section
+        id="second"
+        class="relative z-30 rounded-[32px] pb-20 lg:pb-[167px] pt-[200px] lg:pt-[402px] mt-[125px] md:mt-0"
+      >
+        <div class="continer wrapper relative z-30">
+          <div
+            class="mb-[106px] flex flex-wrap lg:flex-nowrap items-center gap-14 max-w-[917px] mx-auto"
+          >
+            <img src="/assets/images/8invest-icon.png" class="second-up"/>
+            <div>
+              <h2 class="mb-[14px] second-up">Fundusz Inwestycyjny 8Invest</h2>
+              <p class="lg:text-2xl second-up">
+                Celem funduszu jest celowe inwestowanie w ziemię, dostosowane do
+                indywidualnych potrzeb Partnerów Inwestycyjnych. Umożliwiając
+                rozwój i skalowanie ich projektów. Nasza działalność opiera się
+                na wartościach, profesjonalizmie i skuteczności.
+              </p>
+            </div>
+          </div>
+          <div class="max-w-[1174px] mx-auto">
+            <div class="flex flex-col lg:flex-row-reverse gap-5">
+              <div class="mb-12 lg:mb-0 second-up">
+                <img src="/assets/images/home-2.png" class="mx-auto" />
+              </div>
+              <div class="flex-1 max-w-[742px] self-center lg:self-left second-up">
+                <h3 class="mb-10 second-up">Strategiczna przewaga 8Invest:</h3>
+                <ol class="mb-10 second-up">
+                  {
+                    itemList.map((item) => {
+                      return (
+                        <li class="lg:text-lg mb-2 leading-[30px]">{item}</li>
+                      );
+                    })
+                  }
+                </ol>
+                <div class="flex gap-6 items-center second-up">
+                  <a class="btn white">Lorem ipsum</a>
+                  <a class="btn line">Lorem ipsum</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <div class="relative z-30">
+      <Director />
+      <PersonReverse />
+      <Numbers />
+      <Teritory />
+      <Person />
+      <References />
+    </div>
+ 
 </Layout>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script>
-<script is:inline src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText.min.js"></script>
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"></script>
-<script is:inline src="/assets/js/gsap.min.js" ></script>
-<script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js"></script>
-<link rel="stylesheet" href="/assets/style/swiper-bundle.min.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
+></script>
+<script
+  is:inline
+  src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText.min.js"
+></script>
+
+<script is:inline src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script> 
+<script
+  is:inline
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"
+></script>
+<script is:inline src="/assets/js/gsap.min.js"></script>
+<script
+  is:inline
+  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js"
+></script>
+<link rel="stylesheet" href="/assets/style/swiper-bundle.min.css" />
 <script is:inline src="/assets/js/swiper-bundle.min.js"></script>
 <link rel="stylesheet" href="/assets/style/slider.css" />
 <script is:inline src="/assets/js/main.js"></script>

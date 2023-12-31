@@ -416,30 +416,90 @@
         position: absolute;
         left: 50%;
         right: 0;
-        top: 0%;
+        top: -25%;
         transform: translateX(-50%);
         opacity: 1;
         bottom: 0;
-        height: 100vh;
-        width: 100vh;
+        height: 50vh;
+        width: 50vh;
         border-radius: 100%;
+        contain: paint;
     }
 
-    .bg-image>video {
+
+    .bg-video {
+       /*  position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100vh;
         object-fit: cover;
+        object-position: center; */
     }
 
     .contain-paint {
         contain: paint;
     }
 
+    .home-mask{
+        z-index: 0;
+    height: 30vh;
+    max-height: 30vw;
+    min-height: 15.0694vw;
+    transform-origin: 50% 100%;
+    position: fixed;
+    top: auto;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    transform: scale(1);
+    }
+    .home-mask >img{
+        width: 101vw;
+    height: 190.764vw;
+    max-width: none;
+    transform-origin: 50% 100%;
+    object-fit: cover;
+    position: absolute;
+    top: -157.2vw;
+    bottom: auto;
+    left: -0.5vw;
+    right: -0.5vw;
+    }
+    .video-cover{
+        position: fixed;
+        inset: 0;
+        background: transparent;
+        z-index: 20;
+    }
+    
     @media(min-width: 768px) {
-        .bg-image {
-            height: 100vw;
-        width: 100vw;
+        .home-mask{
+            z-index: 0;
+        height: 30vh;
+        max-height: 30vw;
+        min-height: 15.0694vw;
+        transform-origin: 50% 100%;
+        position: fixed;
+        top: auto;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+        transform: scale(1);
         }
-        .bg-image>video {
-            object-fit: contain;
+        .home-mask >img{
+            width: 101vw;
+        height: 190.764vw;
+        max-width: none;
+        transform-origin: 50% 100%;
+        object-fit: cover;
+        position: absolute;
+        top: -157.2vw;
+        bottom: auto;
+        left: -0.5vw;
+        right: -0.5vw;
         }
         .main-menu {
             position: static;
