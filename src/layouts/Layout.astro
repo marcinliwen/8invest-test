@@ -22,12 +22,12 @@ const { title, isHome } = Astro.props;
 	</head>
 	<body class={`${isHome ? 'bg-main-800 isHome' :''}`}>
 		<span class="cursor-follower">Drag</span>
-		<div id="smooth-wrapper">
-			<div id="smooth-content">
+		<!-- <div id="smooth-wrapper"> -->
+			<!-- <div id="smooth-content"> -->
 		<Header/>
 		<slot />
 		<Footer />
-		</div>
-		</div>
+		<!-- </div> -->
+		<!-- </div> -->
 	</body>
 </html>

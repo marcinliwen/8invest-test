@@ -471,9 +471,14 @@
     .video-cover{
         position: fixed;
         inset: 0;
-        background: transparent;
-        z-index: 20;
+        background: #1823A7;
+        opacity: 0;
+        z-index: 21;
     }
+    /* .second-up{
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(10deg, 10deg);
+    } */
     
     @media(min-width: 768px) {
         .home-mask{

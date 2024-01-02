@@ -120,7 +120,7 @@ window.onload = () => {
         })
         var tl = gsap.timeline({
             scrollTrigger: {
-                markers: false,
+                //markers: false,
                 trigger: "#top",
                 start: "top-=121", // when the top of the trigger hits the top of the viewport
                 end: "bottom -=900", // end after scrolling 500px beyond the start
@@ -141,42 +141,77 @@ window.onload = () => {
             scaleY: '7',
             z: '1'
         })
-        .to('.video-cover', {
-            background: '#010a2a8c'
-        })
+
+
+            
+        
+        
         var bg = gsap.timeline({
             scrollTrigger: {
-                marker: true,
+                markers: false,
                 trigger: '#second',
-                start: 'top',
-                end: 'bottom',
+                start: 'top center',
+                end: 'top =200',
                 scrub: true,
-            }
+            },
         });
 
         bg.to('.video-cover', {
-            background: '#010A2F'
+            opacity: '0.7',
+            duration: '1'
+            
         })
+       
 
-        const lenis = new Lenis()
+        /* const lenis = new Lenis()
         lenis.on('scroll', ScrollTrigger.update)
         gsap.ticker.add((time) => {
             lenis.raf(time * 700)
         })
-        gsap.ticker.lagSmoothing(0)
+        gsap.ticker.lagSmoothing(0) */
 
-        gsap.from('.second-up',
+
+        gsap.set('.second-up', {
+            scale: '0.7',
+            opacity: '0'
+        })
+        gsap.set('.third-up', {
+            scale: '0.7',
+            opacity: '0'
+        })
+        var secondUp = gsap.timeline({
+            scrollTrigger: {
+                markers: false,
+                trigger: '.second-up',
+                start: 'top top+=80%',
+                end: 'top top+=60%',
+                scrub: true,
+            }
+        })
+        
+        secondUp.to('.second-up',
             {
-                scrollTrigger: '.second-up',
-                duration: 0.5,
-                opacity: 0,
-                //rotationX: -100,
-                rotateY: '30deg',
-                force3D: true,
-                transformOrigin: "top center -100",
-                stagger: 0.2
+                opacity: '1',
+                scale: '1'
             })
+        var thirdUp = gsap.timeline(
+            {
+                scrollTrigger: {
+                    trigger: '.third-up',
+                    markers: false,
+                    scrub: true,
+                    start: 'top top+=80%',
+                    end: 'top top+=60%',
+                },
+            }
 
+        )
+        thirdUp.to('.third-up', {
+
+            opacity: '1',
+            scale: '1',
+            duration: '1'
+        })
         gsap.from('.line-up',
             {
                 scrollTrigger: '.line-up',
@@ -188,6 +223,54 @@ window.onload = () => {
                 stagger: 0.2
             })
 
+        var sections = gsap.utils.toArray('.scale-up');
+        sections.forEach((section) => {
+            let tl = gsap.timeline({
+                onStart: ()=>{
+                    let opacityFull = gsap.timeline({
+                        scrollTrigger:{
+                            markers: false,
+                            trigger: '.video-cover',
+                            start: 'bottom',
+                            stop: 'bottom=100',
+                            scrub: true
+                        }
+                    })
+                    opacityFull.to('.video-cover',{
+                        opacity: '1'
+                    })
+                },
+                scrollTrigger: {
+                    trigger: section,
+                    start: 'top bottom ',
+                    end: 'top =50%',
+                    markers: false,
+                    scrub: true,
+                }
+            })
+            
+            tl.from(section, {
+                scale: '0.8',
+            });
+        })
+
+        var slideUps = gsap.utils.toArray('.slide-up');
+        slideUps.forEach((slideUp) => {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: slideUp,
+                    start: 'top bottom ',
+                    end: 'top =50%',
+                    markers: false,
+                    scrub: true,
+                    
+                }
+            })
+            tl.addLabel('start')
+            .from(slideUp, {
+                y: '15vw',
+            });
+        })
         const isTouchDevice = 'ontouchstart' in window;
         const createCursorFollower = () => {
             const el = document.querySelector('.cursor-follower');
