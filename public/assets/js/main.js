@@ -306,4 +306,61 @@ window.onload = () => {
             createCursorFollower();
         }
     }
+
+    let counterTargets = document.querySelectorAll(".counterUp");
+
+  let observerCounter = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is_visible");
+        setTimeout(() => {
+          letCount();
+        }, 1000);
+      }
+      if (entry.isIntersecting) {
+        observer.unobserve(entry.target);
+      }
+    });
+  });
+
+  if (counterTargets.length > 0) {
+    counterTargets.forEach((target) => {
+      observerCounter.observe(target);
+    });
+  }
 }
+
+/**
+ * counter animation
+ */
+
+function letCount() {
+    const counters = document.querySelectorAll(".counterUp");
+    const speed = 100; // The lower the slower
+  
+    counters.forEach((counter) => {
+      const updateCount = () => {
+        const target = +counter.getAttribute("data-target");
+        const count = +counter.innerText;
+  
+        // Lower inc to slow and higher to slow
+  
+        const inc = target > speed ? target / speed : 1;
+  
+        // Check if target is reached
+        if (count < target) {
+          // Add inc to count and output in counter
+         
+          counter.innerText = Math.round(count + inc);
+          // Call function every ms
+          setTimeout(updateCount, 50);
+        } else {
+          counter.innerText = target;
+        }
+      };
+  
+      updateCount();
+    });
+  
+  
+  }
