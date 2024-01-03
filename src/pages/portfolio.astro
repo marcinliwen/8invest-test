@@ -6,16 +6,16 @@ import References from "../components/References.astro";
 ---
 
 <Layout title="Portfolio">
-  <section class="pt-8 lg:pt-[120px] pb-14">
+  <section class="pt-8 lg:pt-[120px] pb-14 scale-up">
     <div class="container wrapper">
       <div class="max-w-[1005px] mx-auto text-center">
-        <h1 class="mb-3">Portfolio</h1>
-        <h3 class="mb-10">
+        <h1 class="mb-3  ">Portfolio</h1>
+        <h3 class="mb-10  ">
           Zapraszamy do zgłębienia naszych <em>unikalnych ofert</em> i
           skorzystania z bogactwa doświadczenia, jakie oferujemy w dziedzinie
           nieruchomości.
         </h3>
-        <p class="text-lg">
+        <p class="text-lg  ">
           Niezależnie od tego, czy planują Państwo rozwój mieszkaniowy,
           komercyjny czy przemysłowy, nasze portfolio pełne jest różnorodnych
           możliwości. Nasze projekty posiadają gotowe warunki techniczne,
@@ -27,21 +27,33 @@ import References from "../components/References.astro";
   </section>
   <section class="pb-[90px]">
     <div class="container wrapper">
-      <div
-        class="flex flex-col md:flex-row items-center gap-[12px] p-[4px] border border-white rounded-[28px] md:rounded-full w-max mx-auto mb-6"
+      <!-- <div
+        class="toggle-custom relative flex flex-col md:flex-row items-center gap-[12px] p-[4px] border border-white rounded-[28px] md:rounded-full w-max mx-auto mb-6"
       >
-        <a class="btn white min-w-[200px]">Aktualne projekty</a>
-        <a class="btn min-w-[200px]">Archiwalne projekty</a>
-      </div>
+        <button class="btn  min-w-[200px]">Aktualne projekty</button>
+        <button class="btn min-w-[200px]">Archiwalne projekty</button>
+
+      </div> -->
+      <label class="toggle-label mb-6">
+        <input type="checkbox" class="toggle toggle-xl !block" />
+        <span class="toggle-text toggle-left left-0">Aktualne projekty</span>
+        <span class="toggle-text toggle-right right-0">Archiwalne projekty</span
+        >
+      </label>
+
       <div class="grid md:grid-cols-2 gap-6 pt-6">
         {
           [1, 2, 3, 4, 5, 6].map((item) => {
             return (
-              <div class="p-6 rounded-[24px] border border-white flex flex-wrap lg:flex-nowrap gap-6">
-                <img
-                  src="/assets/images/invest-2.png"
-                  class="relative z-0 rounded-[16px] lg:flex-shrink-0 w-full lg:max-w-[318px]"
-                />
+              <div class="p-6 rounded-[24px] border border-white flex flex-wrap lg:flex-nowrap gap-6 group project-item">
+                <div class="relative rounded-[16px] overflow-hidden h-min">
+                  <img
+                    src="/assets/images/invest-3.png"
+                    class="relative z-0 rounded-[16px] lg:flex-shrink-0 w-full lg:max-w-[318px]"
+                  />
+                  <div class="bg-main-800 rounded-[16px] mix-blend-color absolute z-10 inset-0 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
+                </div>
+
                 <div class="max-w-[274px]">
                   <p class="text-lg lg:text-xl mb-4 font-medium">
                     Świdnica - nieruchomość inwestycyjna
@@ -60,16 +72,52 @@ import References from "../components/References.astro";
                   <button
                     type="button"
                     id="open-project"
-                    class="modal-trigger"
+                    class="modal-trigger bounce-right w-10 h-10 rounded-full border border-[#C6CAFF] flex justify-center items-center overflow-hidden"
                     data-modal="recap-video-modal"
                   >
-                    <img class="w-10 h-10" src="/assets/icons/arrow-down.svg" />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="22"
+                      height="22"
+                      viewBox="0 0 22 22"
+                      fill="none"
+                    >
+                      <g clip-path="url(#clip0_369_8957)">
+                        <path
+                          d="M21.2009 11L0.779083 11"
+                          stroke="#C6CAFF"
+                          stroke-width="1.66667"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M10.3245 21L20.9091 11.6827C21.0058 11.5974 21.0833 11.4925 21.1363 11.3749C21.1894 11.2574 21.2169 11.1299 21.2169 11.0009C21.2169 10.8719 21.1894 10.7444 21.1363 10.6269C21.0833 10.5093 21.0058 10.4044 20.9091 10.3191L10.3245 0.999999"
+                          stroke="#C6CAFF"
+                          stroke-width="1.66667"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_369_8957">
+                          <rect
+                            width="21.8182"
+                            height="21.8182"
+                            fill="white"
+                            transform="translate(0.0909119 21.9091) rotate(-90)"
+                          />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    
                   </button>
                   <div class="modal recap-video-modal">
                     <div class="modal__content">
                       <div class="container wrapper h-screen overflow-auto pt-[142px] pb-[78px] relative">
                         <div class="max-w-[1174px] mx-auto ">
-                          <h2 class="text-2xl lg:text-4xl mb-4">Nazwa projektu {item}</h2>
+                          <h2 class="text-2xl lg:text-4xl mb-4">
+                            Nazwa projektu {item}
+                          </h2>
                           <p class="lg:text-2xl">Województwo:</p>
                           <div class="mt-14 grid lg:grid-cols-2 gap-[100px] mb-[72px]">
                             <div>
@@ -98,29 +146,28 @@ import References from "../components/References.astro";
                             <a class="btn main mx-auto ">Lorem ipsum</a>
                           </div>
                         </div>
-                        
                       </div>
                     </div>
                     <span class="close-icon modal-close">
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="26"
-                            height="26"
-                            viewBox="0 0 26 26"
-                            fill="none"
-                          >
-                            <path
-                              d="M1 25L25 1"
-                              stroke="white"
-                              stroke-width="1.17073"
-                            />
-                            <path
-                              d="M1 1L25 25"
-                              stroke="white"
-                              stroke-width="1.17073"
-                            />
-                          </svg>
-                        </span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="26"
+                        height="26"
+                        viewBox="0 0 26 26"
+                        fill="none"
+                      >
+                        <path
+                          d="M1 25L25 1"
+                          stroke="white"
+                          stroke-width="1.17073"
+                        />
+                        <path
+                          d="M1 1L25 25"
+                          stroke="white"
+                          stroke-width="1.17073"
+                        />
+                      </svg>
+                    </span>
                   </div>
                 </div>
               </div>
@@ -131,7 +178,9 @@ import References from "../components/References.astro";
     </div>
   </section>
   <Teritory />
-  <section class="py-20 lg:pt-[127px] lg:pb-[172px] bg-main-700 rounded-[32px]">
+  <section
+    class="py-20 lg:pt-[127px] lg:pb-[172px] bg-main-700 rounded-[32px] scale-up"
+  >
     <div class="container wrapper">
       <div
         class="max-w-[1174px] mx-auto grid gap-14 md:grid-cols-2 md:gap-20 lg:grid-cols-3"
@@ -758,7 +807,10 @@ import References from "../components/References.astro";
   src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/SplitText.min.js"
 ></script>
 
-<script is:inline src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"></script> 
+<script
+  is:inline
+  src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"
+></script>
 <script
   is:inline
   src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"
@@ -769,7 +821,7 @@ import References from "../components/References.astro";
   src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js"
 ></script>
 <script is:inline src="/assets/js/modal.js"></script>
-<link rel="stylesheet" href="/assets/style/swiper-bundle.min.css"/>
+<link rel="stylesheet" href="/assets/style/swiper-bundle.min.css" />
 <script is:inline src="/assets/js/swiper-bundle.min.js"></script>
 <link rel="stylesheet" href="/assets/style/slider.css" />
 <script is:inline src="/assets/js/main.js"></script>

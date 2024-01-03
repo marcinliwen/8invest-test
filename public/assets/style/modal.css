@@ -59,3 +59,10 @@ Modal Content
     background: #1823A7;
     cursor: pointer;
 }
+.close-icon:active, .close-icon:hover:active{
+    transform: scale(1);
+}
+.close-icon:hover{
+    transform: scale(1.06);
+    transition-duration: 300ms;
+}

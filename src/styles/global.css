@@ -66,7 +66,7 @@
         line-height: 170%;
     }
 
-    input:not([type="radio"]),
+    input:not([type="radio"], [type="checkbox"]),
     textarea,
     select {
         padding: 16px 24px;
@@ -93,7 +93,8 @@
         border-radius: 24px;
     }
 
-    input:focus,
+
+     input:not([type="checkbox"]):focus,
     select:focus,
     textarea:focus {
         outline-offset: -4px;
@@ -636,4 +637,92 @@
     z-index: 10000;
     user-select: none;
     pointer-events: none;
+}
+
+
+  .toggle:checked, .toggle[checked=true], .toggle[aria-checked=true] {
+    background-image: none;
+    --handleoffsetcalculator: var(--handleoffset);
+    --tw-text-opacity: 1;
+    
+}
+.toggle-left{
+    color:#2C39D8;
+}
+.toggle:checked ~ .toggle-right, .toggle[checked=true] ~ .toggle-right, .toggle[aria-checked=true] ~ .toggle-right{
+    color:#2C39D8;
+}
+.toggle:checked ~ .toggle-left, .toggle[checked=true] ~ .toggle-left, .toggle[aria-checked=true] ~ .toggle-left{
+    color:#fff;
+}
+  .toggle{
+    cursor: pointer;
+    flex-shrink: 0;
+    --tglbg:#2c39d8;
+    --handleoffset: 1.5rem;
+    --handleoffsetcalculator: calc(var(--handleoffset) * -1);
+    --togglehandleborder: 0 0;
+    height: 1.5rem;
+    width: 3rem;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    border-radius: var(--rounded-badge,1.9rem);
+    border-width: 1px;
+    border-color: currentColor;
+    background-color: currentColor;
+    color: var(--fallback-bc,oklch(var(--bc)/.5));
+    transition: background,box-shadow var(--animation-input,.2s) ease-out;
+    box-shadow: var(--handleoffsetcalculator) 0 0 2px var(--tglbg) inset,0 0 0 2px var(--tglbg) inset,var(--togglehandleborder);
+  }
+  .toggle-xl{
+    --toggle-width: 296px;
+    margin: auto;
+    width: 100%;
+    max-width: 422px;
+    height: 58px;
+    --handleoffset: calc(var(--toggle-width) / 2);
+  }
+
+  .toggle-text{
+    cursor: pointer;
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    text-align: center;
+    font-weight: 600;
+    line-height: 58px;
+    font-size: 14px;
+  }
+  .toggle-label{
+    display: flex;
+    position: relative;
+    max-width: 422px;
+    margin: auto;
+  }
+  @media(min-width: 400px){
+    .toggle-xl{
+        --toggle-width: 350px;
+    }
+  }
+  @media(min-width: 522px){
+    .toggle-xl{
+        --toggle-width: 422px;
+    }
+    .toggle-text{
+        font-size: 16px;
+        font-weight: 500;
+    }
+  }
+  @keyframes bounceRight {
+    0% {opacity: 1; transform: translateX(0px) scale(1);}
+    25%{opacity: 0; transform:translateX(10px) scale(0.9);}
+    26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
+    55% {opacity: 1; transform: translateX(0px) scale(1);}
+  }
+  
+  .bounce-right:hover svg{
+    animation-name: bounceRight;
+    animation-duration:1.4s;
+    animation-timing-function:linear;
 }

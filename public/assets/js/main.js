@@ -1,4 +1,5 @@
 window.onload = () => {
+    let isMobile = window.matchMedia("(max-width: 1024px)");
     /**
      * line animation 
      */
@@ -120,10 +121,10 @@ window.onload = () => {
         })
         var tl = gsap.timeline({
             scrollTrigger: {
-                //markers: false,
+                markers: true,
                 trigger: "#top",
                 start: "top-=121", // when the top of the trigger hits the top of the viewport
-                end: "bottom -=900", // end after scrolling 500px beyond the start
+                end: isMobile?  "bottom": "bottom -=900", // end after scrolling 500px beyond the start
                 scrub: 1,
                 toggleAction: 'play none none reverse',
                 pin: false, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
@@ -137,9 +138,10 @@ window.onload = () => {
             }
         })
         tl.to('.mask-img', {
-            scaleX: '7',
-            scaleY: '7',
-            z: '1'
+            scaleX: isMobile ?'4':'3',
+            scaleY: isMobile ?'4':'3',
+            z: '1',
+            y: isMobile ? '-40vh': '0',
         })
 
 
@@ -254,6 +256,23 @@ window.onload = () => {
             });
         })
 
+        var projects = gsap.utils.toArray('.project-item');
+        projects.forEach((project) => {
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: project,
+                    start: 'top bottom-=50 ',
+                    end: 'top =50%',
+                    markers: true,
+                    scrub: true,
+                }
+            })
+            
+            tl.from(project, {
+             
+            });
+        })
+
         var slideUps = gsap.utils.toArray('.slide-up');
         slideUps.forEach((slideUp) => {
             let tl = gsap.timeline({
@@ -274,25 +293,28 @@ window.onload = () => {
         const isTouchDevice = 'ontouchstart' in window;
         const createCursorFollower = () => {
             const el = document.querySelector('.cursor-follower');
-            window.addEventListener('mousemove', (e) => {
-                const { target, x, y } = e;
-                const isTargetLinkOrBtn = target?.closest('.cursor-grab');
-                // GSAP config
-                gsap.to(el, {
-                    duration: 0.3,
-                    x: x - 16,
-                    y: y - 16,
-                })
-            });
+            if(el){
+                window.addEventListener('mousemove', (e) => {
+                    const { target, x, y } = e;
+                    const isTargetLinkOrBtn = target?.closest('.cursor-grab');
+                    // GSAP config
+                    gsap.to(el, {
+                        duration: 0.3,
+                        x: x - 16,
+                        y: y - 16,
+                    })
+                });
+            }
+           
 
-            document.querySelector('.cursor-grab').addEventListener('mouseenter', (e) => {
+            document.querySelector('.cursor-grab')?.addEventListener('mouseenter', (e) => {
                 gsap.to(el, {
                     duration: 0.3,
                     opacity: 1,
                     scale: 1
                 });
             });
-            document.querySelector('.cursor-grab').addEventListener('mouseleave', (e) => {
+            document.querySelector('.cursor-grab')?.addEventListener('mouseleave', (e) => {
                 gsap.to(el, {
                     duration: 0.3,
                     opacity: 0,
@@ -341,6 +363,7 @@ function letCount() {
     counters.forEach((counter) => {
       const updateCount = () => {
         const target = +counter.getAttribute("data-target");
+       
         const count = +counter.innerText;
   
         // Lower inc to slow and higher to slow
@@ -350,12 +373,13 @@ function letCount() {
         // Check if target is reached
         if (count < target) {
           // Add inc to count and output in counter
-         
-          counter.innerText = Math.round(count + inc);
+         let num = Math.round(count + inc);
+         console.log(num.toLocaleString())
+          counter.innerText = num ;
           // Call function every ms
           setTimeout(updateCount, 50);
         } else {
-          counter.innerText = target;
+          counter.innerText = target.toLocaleString();
         }
       };
   
