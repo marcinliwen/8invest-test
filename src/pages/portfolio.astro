@@ -9,13 +9,13 @@ import References from "../components/References.astro";
   <section class="pt-8 lg:pt-[120px] pb-14 scale-up">
     <div class="container wrapper">
       <div class="max-w-[1005px] mx-auto text-center">
-        <h1 class="mb-3  ">Portfolio</h1>
-        <h3 class="mb-10  ">
+        <h1 class="mb-3  line-up">Portfolio</h1>
+        <h3 class="mb-10  line-up leading-8">
           Zapraszamy do zgłębienia naszych <em>unikalnych ofert</em> i
           skorzystania z bogactwa doświadczenia, jakie oferujemy w dziedzinie
           nieruchomości.
         </h3>
-        <p class="text-lg  ">
+        <p class="text-lg  line-up">
           Niezależnie od tego, czy planują Państwo rozwój mieszkaniowy,
           komercyjny czy przemysłowy, nasze portfolio pełne jest różnorodnych
           możliwości. Nasze projekty posiadają gotowe warunki techniczne,
@@ -51,7 +51,7 @@ import References from "../components/References.astro";
                     src="/assets/images/invest-3.png"
                     class="relative z-0 rounded-[16px] lg:flex-shrink-0 w-full lg:max-w-[318px]"
                   />
-                  <div class="bg-main-800 rounded-[16px] mix-blend-color absolute z-10 inset-0 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
+                  <div class="hidden lg:block bg-main-800 rounded-[16px] mix-blend-color absolute z-10 inset-0 group-hover:opacity-0 transition-opacity duration-500 ease-in-out" />
                 </div>
 
                 <div class="max-w-[274px]">
@@ -113,7 +113,7 @@ import References from "../components/References.astro";
                   </button>
                   <div class="modal recap-video-modal">
                     <div class="modal__content">
-                      <div class="container wrapper h-screen overflow-auto pt-[142px] pb-[78px] relative">
+                      <div data-lenis-prevent class="container wrapper h-screen overflow-auto pt-[142px] pb-[78px] relative scroller">
                         <div class="max-w-[1174px] mx-auto ">
                           <h2 class="text-2xl lg:text-4xl mb-4">
                             Nazwa projektu {item}

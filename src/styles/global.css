@@ -193,7 +193,7 @@
         border: 1px solid #fff;
         background-color: #FFF;
         color: #1823A7;
-        transition: background-color ease-in 300ms, border-color ease-in 300ms, padding-right ease-in 400ms;
+        transition: background-color linear 300ms, border-color linear 300ms, padding-right linear 400ms;
     }
 
 
@@ -212,7 +212,7 @@
     .btn.line {
         border: 1px solid #ACB2FD;
         color: #ACB2FD;
-        transition: background-color ease-in 300ms, border-color ease-in 300ms, color ease-in 300ms;
+        transition: background-color linear 300ms, border-color linear 300ms, color linear 300ms;
     }
 
     .custom-select {
@@ -480,7 +480,17 @@
         opacity: 1;
         transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(40deg) rotateZ(0deg) skew(10deg, 10deg);
     } */
-    
+    .point {
+        position: absolute;
+        right: 0;
+        transition: background-color linear 400ms, right linear 400ms;
+    }
+
+    .main-btn {
+        position: relative;
+        padding-right: 44px;
+        transition: padding-right linear 400ms;
+    }
     @media(min-width: 768px) {
         .home-mask{
             z-index: 0;
@@ -518,66 +528,56 @@
 
         .main-btn:hover {
             padding-right: 0px;
-            transition: padding-right ease-in 400ms;
+            transition: padding-right linear 400ms;
         }
 
-        .point {
-            position: absolute;
-            right: 0;
-            transition: background-color ease-in 400ms, right ease-in 400ms;
-        }
-
-        .main-btn {
-            position: relative;
-            padding-right: 44px;
-            transition: padding-right ease-in 400ms;
-        }
+        
 
         .btn-text.white {
             color: #1823A7;
             padding-right: 24px;
-            transition: background-color ease-in 400ms, border-color ease-in 400ms, padding-right ease-in 400ms;
+            transition: background-color linear 400ms, border-color linear 400ms, padding-right linear 400ms;
         }
 
         .main-btn:hover .btn-text {
             padding-right: 44px;
             background: #8d95f9;
             border-color: #8d95f9;
-            transition: padding-right ease-in 400ms, border-color ease-in 400ms, background-color ease-in 400ms, ;
+            transition: padding-right linear 400ms, border-color linear 400ms, background-color linear 400ms, ;
         }
 
         .btn-text.line {
-            transition: padding-right ease-in 400ms, border-color ease-in 400ms, background-color ease-in 400ms, color ease-in 400ms;
+            transition: padding-right linear 400ms, border-color linear 400ms, background-color linear 400ms, color linear 400ms;
         }
 
         .main-btn:hover .btn-text.line {
             color: #1823A7;
-            transition: padding-right ease-in 400ms, border-color ease-in 400ms, background-color ease-in 400ms, color ease-in 400ms;
+            transition: padding-right linear 400ms, border-color linear 400ms, background-color linear 400ms, color linear 400ms;
         }
 
         .main-btn:hover .point {
             right: 14px;
             background-color: #fff;
-            transition: background-color ease-in 400ms, right ease-in 400ms;
+            transition: background-color linear 400ms, right linear 400ms;
         }
 
         .btn.white:hover {
             background-color: #8d95f9;
             border-color: #8d95f9;
-            transition: background-color ease-in 300ms, border-color ease-in 300ms, padding-right ease-in 400ms;
+            transition: background-color linear 300ms, border-color linear 300ms, padding-right linear 400ms;
         }
 
         .btn.second:hover {
             background-color: #8d95f9;
             border-color: #8d95f9;
-            transition: background-color ease-in 300ms, border-color ease-in 300ms;
+            transition: background-color linear 300ms, border-color linear 300ms;
         }
 
         .btn.line:hover {
             background-color: #8d95f9;
             border-color: #8d95f9;
             color: #fff;
-            transition: background-color ease-in 300ms, border-color ease-in 300ms, color ease-in 300ms;
+            transition: background-color linear 300ms, border-color linear 300ms, color linear 300ms;
         }
 
         .link:hover:after {
@@ -726,3 +726,31 @@
     animation-duration:1.4s;
     animation-timing-function:linear;
 }
+/*Lenis*/
+html.lenis {
+    height: auto;
+  }
+  
+  .lenis.lenis-smooth {
+    scroll-behavior: auto;
+  }
+  
+  .lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+  }
+  
+  .lenis.lenis-stopped {
+    overflow: hidden;
+  }
+  
+  .lenis.lenis-scrolling iframe {
+    pointer-events: none;
+  }
+
+  body::-webkit-scrollbar{
+    display: none;
+  }
+  .line-up{
+    opacity: 0;
+    
+  }

@@ -66,3 +66,18 @@ Modal Content
     transform: scale(1.06);
     transition-duration: 300ms;
 }
+ .scroller{
+    scrollbar-color: #1823A7;
+}
+.scroller::-webkit-scrollbar-thumb{
+   background: #1823A7;
+   height: 20px;
+   border-radius: 50px;
+   margin-right: 3px;
+   border: 2px solid rgba(0, 0, 0, 0);
+  background-clip: padding-box;
+}
+.scroller::-webkit-scrollbar {
+    width: 8px; /* Mostly for vertical scrollbars */
+    height: 5px; /* Mostly for horizontal scrollbars */
+  }
