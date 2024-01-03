@@ -121,7 +121,7 @@ window.onload = () => {
         })
         var tl = gsap.timeline({
             scrollTrigger: {
-                markers: true,
+                markers: false,
                 trigger: "#top",
                 start: "top-=121", // when the top of the trigger hits the top of the viewport
                 end: isMobile?  "bottom": "bottom -=900", // end after scrolling 500px beyond the start
@@ -165,13 +165,12 @@ window.onload = () => {
         })
        
 
-        /* const lenis = new Lenis()
+        const lenis = new Lenis()
         lenis.on('scroll', ScrollTrigger.update)
         gsap.ticker.add((time) => {
             lenis.raf(time * 700)
         })
-        gsap.ticker.lagSmoothing(0) */
-
+        gsap.ticker.lagSmoothing(0) 
 
         gsap.set('.second-up', {
             scale: '0.7',
@@ -263,7 +262,7 @@ window.onload = () => {
                     trigger: project,
                     start: 'top bottom-=50 ',
                     end: 'top =50%',
-                    markers: true,
+                    markers: false,
                     scrub: true,
                 }
             })
