@@ -47,11 +47,48 @@ window.onload = () => {
     /**
      * slider
      */
-
+    const startAutoplay = (swiper, time) => {
+        setTimeout(() => {
+          swiper.autoplay.start();
+        }, time);
+      };
     if (typeof Swiper !== 'undefined') {
-
-
-        const swiper = new Swiper('.swiper', {
+        const progressBar = document.querySelector('.autoplay-progress')
+        const swiperHome = new Swiper('.swiper-home', {
+            slidesPerView: 1,
+            spaceBetween: 0,
+            autoplay:{
+                delay:6000,
+                disableOnInteraction: true,
+            },
+            speed:1200,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true
+              },
+            on:{
+                init(){
+                    if(progressBar){
+                        progressBar.style.setProperty("--progress", 0);
+                    }
+                },
+                autoplayStop(){
+                    if(progressBar){
+                        progressBar.style.setProperty("--progress", 0);
+                    }
+                },
+                autoplayTimeLeft(s, time, progress){
+                    if(progressBar){
+                        progressBar.style.setProperty("--progress", 1 - progress);
+                    }
+                    
+                },
+                slideChange(s){
+                    startAutoplay(s, 1200)
+                }
+            }
+        });
+        const swiperReference = new Swiper('.references-slider', {
             slidesPerView: 1,
             spaceBetween: 0,
             speed: 600,
@@ -92,25 +129,21 @@ window.onload = () => {
             on: {
                 init: function (swiper) {
                     leftDistance = swiper.slidesSizesGrid[0] + 12;
-                    //document.getElementById('drag').style.left = leftDistance + "px";
                 },
                 resize: function (swiper) {
                     console.log(swiper.slidesSizesGrid[0])
                     leftDistance = swiper.slidesSizesGrid[0] + 12;
-                    //document.getElementById('drag').style.left = leftDistance + "px";
                 }
             }
 
         });
-        swiper.on('touchStart', (_) => {
+        swiperReference.on('touchStart', (_) => {
             TweenMax.to('.reference-slide', 0.4, { scale: 0.9 })
         })
-        swiper.on('touchEnd', (_) => {
+        swiperReference.on('touchEnd', (_) => {
             TweenMax.to('.reference-slide', 0.4, { scale: 1 })
         })
     }
-
-
 
     if (typeof gsap !== 'undefined' || gsap !== null) {
         gsap.registerPlugin(ScrollTrigger);
@@ -123,18 +156,11 @@ window.onload = () => {
             scrollTrigger: {
                 markers: false,
                 trigger: "#top",
-                start: "top-=121", // when the top of the trigger hits the top of the viewport
-                end: isMobile ? "bottom" : "bottom -=900", // end after scrolling 500px beyond the start
+                start: "top-=121", 
+                end: isMobile ? "bottom" : "bottom -=900", 
                 scrub: 1,
                 toggleAction: 'play none none reverse',
-                pin: false, // smooth scrubbing, takes 1 second to "catch up" to the scrollbar
-                // snap: {
-                //    snapTo: "labels", // snap to the closest label in the timeline
-                //    duration: { min: 0.2, max: 3 }, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
-                //   delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
-                //ease: "power1.inOut", // the ease of the snap animation ("power3" by default)
-                //},
-
+                pin: false, 
             }
         })
         tl.to('.mask-img', {
@@ -143,10 +169,6 @@ window.onload = () => {
             z: '1',
             y: isMobile ? '-40vh' : '0',
         })
-
-
-
-
 
         var bg = gsap.timeline({
             scrollTrigger: {
@@ -248,7 +270,7 @@ window.onload = () => {
                 opacity: 1,
                 rotationX: 0,
                 force3D: true,
-                //transformOrigin: "top center -100",
+                transformOrigin: "top center -100",
                 stagger: 0.2
             })
 

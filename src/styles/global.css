@@ -166,7 +166,10 @@
             padding-left: 48px;
             padding-right: 48px;
         }
-
+        .home-hero-section{
+            height: calc(100vh - 121px);
+            display: grid;
+        }
     }
 
     .btn {
