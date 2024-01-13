@@ -79,7 +79,7 @@ window.onload = () => {
                 },
                 autoplayTimeLeft(s, time, progress){
                     if(progressBar){
-                        progressBar.style.setProperty("--progress", 1 - progress);
+                        progressBar.style.setProperty("--progress", (1 - progress));
                     }
                     
                 },
