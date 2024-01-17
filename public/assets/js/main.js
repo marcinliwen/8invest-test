@@ -131,7 +131,6 @@ window.onload = () => {
                     leftDistance = swiper.slidesSizesGrid[0] + 12;
                 },
                 resize: function (swiper) {
-                    console.log(swiper.slidesSizesGrid[0])
                     leftDistance = swiper.slidesSizesGrid[0] + 12;
                 }
             }
@@ -263,9 +262,12 @@ window.onload = () => {
                 force3D: true,
                 transformOrigin: "top center -100",
         })
-        gsap.to('.line-up',
+
+        var lineUps = gsap.utils.toArray('.line-up');
+        lineUps.forEach((lineUp)=>{
+            gsap.to(lineUp,
             {
-                scrollTrigger: '.line-up',
+                scrollTrigger: lineUp,
                 duration: 0.5,
                 opacity: 1,
                 rotationX: 0,
@@ -273,6 +275,8 @@ window.onload = () => {
                 transformOrigin: "top center -100",
                 stagger: 0.2
             })
+        })
+       
 
         var sections = gsap.utils.toArray('.scale-up');
         sections.forEach((section) => {
@@ -448,7 +452,6 @@ function letCount() {
             if (count < target) {
                 // Add inc to count and output in counter
                 let num = Math.round(count + inc);
-                console.log(num.toLocaleString())
                 counter.innerText = num;
                 // Call function every ms
                 setTimeout(updateCount, 50);

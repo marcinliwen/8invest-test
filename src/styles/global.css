@@ -314,14 +314,11 @@
 
     input.newsletter {
         padding-left: 0px;
-        padding-right: 0px;
+        padding-right: 30px;
         border: none;
         border-radius: 0px;
         color: #C6CAFF;
         border-bottom: 1px solid #C6CAFF;
-        background-image: url('/assets/icons/arrow-down.svg');
-        background-repeat: no-repeat;
-        background-position: right;
     }
 
     input.newsletter:focus {

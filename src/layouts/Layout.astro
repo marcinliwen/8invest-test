@@ -2,11 +2,12 @@
 interface Props {
 	title: string;
 	isHome?: boolean;
+	hasCursor?: boolean;
 }
 import "../styles/global.css";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
-const { title, isHome } = Astro.props;
+const { title, isHome, hasCursor } = Astro.props;
 
 ---
 
@@ -21,7 +22,7 @@ const { title, isHome } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body class={`${isHome ? 'bg-main-800 isHome' :''}`}>
-		{isHome && <span class="cursor-follower">Drag</span>}
+		{hasCursor && <span class="cursor-follower">Drag</span>}
 		
 		<div id="smooth-wrapper">
 			<div id="smooth-content">
