@@ -48,28 +48,25 @@ const itemList = [
               return (
                 <div class="swiper-slide">
                   <div class="container wrapper relative z-30 ">
-                  <div class="text-center pb-[87px]">
-                    <h1 class="mb-3">Inwestuj w ziemie, buduj przyszłość!</h1>
-                    <h3 class="max-w-[687px] mx-auto mb-8">
-                      Z nami skorzystasz z doświadczenia naszego zespołu, który
-                      zdobył zaufanie partnerów w branży.{item}
-                    </h3>
-                    <a class="flex items-center max-w-max mx-auto main-btn">
-                      <span class="btn white btn-text main-text">
-                        Dowiedz się więcej
-                      </span>
-                      <span class="w-6 h-6 bg-second-600 rounded-full flex-shrink-0 block point" />
-                    </a>
+                    <div class="text-center pb-[87px]">
+                      <h1 class="mb-3">Inwestuj w ziemie, buduj przyszłość!</h1>
+                      <h3 class="max-w-[687px] mx-auto mb-8">
+                        Z nami skorzystasz z doświadczenia naszego zespołu,
+                        który zdobył zaufanie partnerów w branży.{item}
+                      </h3>
+                      <a class="flex items-center max-w-max mx-auto main-btn">
+                        <span class="btn white btn-text main-text">
+                          Dowiedz się więcej
+                        </span>
+                        <span class="w-6 h-6 bg-second-600 rounded-full flex-shrink-0 block point" />
+                      </a>
+                    </div>
                   </div>
                 </div>
-                  </div>
-                
               );
             })
           }
         </div>
-       
-        
       </div>
       <!-- <div class="container wrapper relative z-30 mt-auto">
         <div class="pagination-container">
@@ -88,90 +85,81 @@ const itemList = [
           </ul>
           <div class="pagination-container">
             <div class="autoplay-progress"></div>
-            <div class="swiper-pagination home-swiper-pagination static text-right">
-              
-          </div>
-          <!-- <div class="flex items-center gap-[4px]">
+            <div
+              class="swiper-pagination home-swiper-pagination static text-right"
+            >
+            </div>
+            <!-- <div class="flex items-center gap-[4px]">
             <span class="h-[1px] w-[78px] block bg-second-200"></span>
             <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"
             ></span>
             <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"
             ></span>
           </div> -->
-        </div>
-      </div>
-    </section>
-    <section
-      id="second"
-      class="relative z-30 rounded-[32px] pb-20 lg:pb-[167px] pt-[200px] lg:pt-[402px] mt-[125px] md:mt-0"
-    >
-      <div class="continer wrapper relative z-30">
-        <div
-          class="mb-[106px] flex flex-wrap lg:flex-nowrap items-center gap-14 max-w-[917px] mx-auto second-up"
-        >
-          <img src="/assets/images/8invest-icon.png" class="" />
-          <div>
-            <h2 class="mb-[14px]">Fundusz Inwestycyjny 8Invest</h2>
-            <p class="lg:text-2xl">
-              Celem funduszu jest celowe inwestowanie w ziemię, dostosowane do
-              indywidualnych potrzeb Partnerów Inwestycyjnych. Umożliwiając
-              rozwój i skalowanie ich projektów. Nasza działalność opiera się na
-              wartościach, profesjonalizmie i skuteczności.
-            </p>
           </div>
         </div>
-        <div class="max-w-[1174px] mx-auto third-up opacity-0">
-          <div class="flex flex-col lg:flex-row-reverse gap-5">
-            <div class="mb-12 lg:mb-0">
-              <img src="/assets/images/home-2.png" class="mx-auto" />
+      </div>
+      <section
+        id="second"
+        class="relative z-30 rounded-[32px] pb-20 lg:pb-[167px] pt-[200px] lg:pt-[402px] mt-[125px] md:mt-0"
+      >
+        <div class="continer wrapper relative z-30">
+          <div
+            class="mb-[106px] flex flex-wrap lg:flex-nowrap items-center gap-14 max-w-[917px] mx-auto second-up"
+          >
+            <img src="/assets/images/8invest-icon.png" class="" />
+            <div>
+              <h2 class="mb-[14px]">Fundusz Inwestycyjny 8Invest</h2>
+              <p class="lg:text-2xl">
+                Celem funduszu jest celowe inwestowanie w ziemię, dostosowane do
+                indywidualnych potrzeb Partnerów Inwestycyjnych. Umożliwiając
+                rozwój i skalowanie ich projektów. Nasza działalność opiera się
+                na wartościach, profesjonalizmie i skuteczności.
+              </p>
             </div>
-            <div class="flex-1 max-w-[742px] self-center lg:self-left">
-              <h3 class="mb-10">Strategiczna przewaga 8Invest:</h3>
-              <ol class="mb-10">
-                {
-                  itemList.map((item) => {
-                    return (
-                      <li class="lg:text-lg mb-2 leading-[30px]">{item}</li>
-                    );
-                  })
-                }
-              </ol>
-              <div class="flex gap-6 items-center">
-                <a class="btn white">Lorem ipsum</a>
-                <a class="btn line">Lorem ipsum</a>
+          </div>
+          <div class="max-w-[1174px] mx-auto third-up opacity-0">
+            <div class="flex flex-col lg:flex-row-reverse gap-5">
+              <div class="mb-12 lg:mb-0">
+                <img src="/assets/images/home-2.png" class="mx-auto" />
+              </div>
+              <div class="flex-1 max-w-[742px] self-center lg:self-left">
+                <h3 class="mb-10">Strategiczna przewaga 8Invest:</h3>
+                <ol class="mb-10">
+                  {
+                    itemList.map((item) => {
+                      return (
+                        <li class="lg:text-lg mb-2 leading-[30px]">{item}</li>
+                      );
+                    })
+                  }
+                </ol>
+                <div class="flex gap-6 items-center">
+                  <a class="btn white">Lorem ipsum</a>
+                  <a class="btn line">Lorem ipsum</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </section>
+    <div class="relative z-30">
+      <Director />
+      <PersonReverse />
+      <Numbers />
+      <Teritory />
+      <Person />
+      <References />
+    </div>
   </div>
-  <div class="relative z-30">
-    <Director />
-    <PersonReverse />
-    <Numbers />
-    <Teritory />
-    <Person />
-    <References />
-  </div>
-</Layout>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"
-></script> -->
 
-<script
-  is:inline
-  src="https://unpkg.com/@studio-freight/lenis@1.0.32/dist/lenis.min.js"
-></script>
-<script
-  is:inline
-  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/ScrollTrigger.min.js"
-></script>
-<script is:inline src="/assets/js/gsap.min.js"></script>
-<script
-  is:inline
-  src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/Observer.min.js"
-></script>
-<link rel="stylesheet" href="/assets/style/swiper-bundle.min.css" />
-<script is:inline src="/assets/js/swiper-bundle.min.js"></script>
-<link rel="stylesheet" href="/assets/style/slider.css" />
-<script is:inline src="/assets/js/main.js"></script>
+  <script is:inline src="/assets/js/lenis.min.js"></script>
+  <script is:inline src="/assets/js/ScrollTrigger.min.js"></script>
+  <script is:inline src="/assets/js/gsap.min.js"></script>
+  <script is:inline src="/assets/js/Observer.min.js"></script>
+  <link rel="stylesheet" href="/assets/style/swiper-bundle.min.css" />
+  <script is:inline src="/assets/js/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="/assets/style/slider.css" />
+  <script is:inline src="/assets/js/main.js"></script>
+</Layout>
