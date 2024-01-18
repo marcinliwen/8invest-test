@@ -92,6 +92,11 @@ window.onload = () => {
             slidesPerView: 1,
             spaceBetween: 0,
             speed: 600,
+            autoplay:{
+                delay:3000,
+                disableOnInteraction: true,
+            },
+            loop: true,
             freeMode: {
                 enabled: false,
                 sticky: false,
