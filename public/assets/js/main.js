@@ -529,7 +529,7 @@ function letCount() {
 
 
 }
-/* 
+
 document.addEventListener("DOMContentLoaded", function(){
     document.body.addEventListener("touchstart", playVideo);
     playVideo()
@@ -543,4 +543,4 @@ document.addEventListener("DOMContentLoaded", function(){
             video.play();
         }
     }
-});  */
+}); 
