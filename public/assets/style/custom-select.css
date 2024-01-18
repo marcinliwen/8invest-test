@@ -1,0 +1,98 @@
+.custom-select-container {
+  position: relative;
+  box-sizing: border-box;;
+}
+.custom-select-container * {
+  box-sizing: border-box;
+}
+.custom-select-container.is-disabled {
+  opacity: .333;
+}
+.custom-select-opener {
+  background-color: #ccc;
+  padding: 0.5em;
+  display: block;
+  cursor: pointer;
+  width: 100%;
+  padding: 16px 24px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+        color: #fff;
+        width: 100%;
+        max-width: 594px;
+        transition-duration: 300ms;
+        transition-timing-function: ease-in-out;
+        background-color: transparent;
+        border: 1px solid #FFF;
+        border-radius: 700px;
+        background-image: url('/assets/icons/select-icon.svg');
+        background-repeat: no-repeat;
+        background-position: calc(100% - 24px);
+}
+.custom-select-container select {
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.custom-select-panel {
+  max-height: 0;
+  transition: all .5s ease-out, overflow-y 0.1s 0.5s;
+  overflow: hidden;
+
+  color: #1d2abc;
+  position: absolute;
+  top: 100%;
+  z-index: 1;
+  width: 100%;
+}
+:root{
+  --custom_select_height: 47px;
+  --custom_select_count: 1;
+}
+.custom-select-option {
+  padding: 12px 24px;
+  cursor: pointer;
+  height: var(--custom_select_height);
+}
+
+.custom-select-container.is-open .custom-select-panel {
+  max-height: calc(var(--custom_select_height) * var(--custom_select_count));
+  overflow-y: auto
+}
+
+.custom-select-option.has-focus {
+  background-color: #dde0ff;
+}
+.custom-select-option.is-selected::before {
+  /* content: "✔";
+  padding-right: 0.5em; */
+}
+.custom-select-optgroup > .custom-select-option {
+  padding-left: 2em;
+}
+.custom-select-optgroup::before {
+  content: attr(data-label);
+  display: block;
+  padding: 0.5em;
+  color: #888;
+}
+.custom-select-option:first-of-type {
+  border-bottom: none;
+  border-radius: 24px 24px 0 0;
+}
+
+.custom-select-option:last-of-type {
+
+  border-radius: 0 0 24px 24px;
+}
+
+.custom-select-option {
+  background-color: #fff;
+}
+
+.custom-select-panel {
+  
+}

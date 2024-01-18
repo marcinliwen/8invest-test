@@ -145,11 +145,19 @@ import Numbers from "../components/Numbers.astro";
 			<Input name="firma" type="text" placeholder="Nazwa firmy" />
 			<Input name="phone" type="phone" placeholder="Numer telefonu" />
 			<Input name="email" type="email" placeholder="Email" />
-            <Select
+            <!-- <Select
               name="temat"
               placeholder="Temat"
               options={["first", "second", "third"]}
-            />
+            /> -->
+            <label>
+              <select id="contact-select">
+                <option value="">select..</option>
+                <option value="first">first</option>
+                <option value="second">second</option>
+                <option value="third">third</option>
+              </select>
+            </label>
             <div class="custom-textarea">
               <textarea placeholder="Treść wiadomości" name="message" rows="6"
               ></textarea>
@@ -163,6 +171,8 @@ import Numbers from "../components/Numbers.astro";
   </section>
   <Numbers />
 </Layout>
+<script is:inline src="/assets/js/custom-select.min.js"></script>
+<link rel="stylesheet" href="/assets/style/custom-select.css" />
 <script is:inline src="/assets/js/lenis.min.js"></script>
   <script is:inline src="/assets/js/ScrollTrigger.min.js"></script>
   <script is:inline src="/assets/js/gsap.min.js"></script>

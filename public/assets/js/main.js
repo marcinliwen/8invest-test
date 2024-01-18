@@ -42,48 +42,62 @@ window.onload = () => {
             document.body.classList.remove("overflow-hidden");
         });
     }
+    /**
+      * custom select
+      */
 
-
+    /* const options = document.querySelectorAll(".custom-select-option");
+    const selectInput = document.querySelector(".custom-select input");
+    options.forEach((item) => {
+      item.addEventListener("click", () => {
+        selectInput.setAttribute("value", item.dataset.value);
+      });
+    });
+    const customSelectContent = document.querySelector('.custom-select-content')
+    const customSelectElementHeight  = getComputedStyle(customSelectContent.querySelectorAll('li')[0]).getPropertyValue('--custom_select_height')
+    console.log('options', options.length, customSelectElementHeight)
+    customSelectContent.style.setProperty('--custom_select_content_height', customSelectElementHeight * options.length);
+    */
     /**
      * slider
      */
     const startAutoplay = (swiper, time) => {
         setTimeout(() => {
-          swiper.autoplay.start();
+            swiper.autoplay.start();
         }, time);
-      };
+    };
     if (typeof Swiper !== 'undefined') {
         const progressBar = document.querySelector('.autoplay-progress')
         const swiperHome = new Swiper('.swiper-home', {
             slidesPerView: 1,
             spaceBetween: 0,
-            autoplay:{
-                delay:6000,
+            autoplay: {
+                delay: 6000,
                 disableOnInteraction: true,
             },
-            speed:1200,
+            speed: 1200,
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true
-              },
-            on:{
-                init(){
-                    if(progressBar){
+            },
+            on: {
+                init() {
+                    if (progressBar) {
                         progressBar.style.setProperty("--progress", 0);
                     }
                 },
-                autoplayStop(){
-                    if(progressBar){
+                autoplayStop() {
+                    if (progressBar) {
                         progressBar.style.setProperty("--progress", 0);
                     }
                 },
-                autoplayTimeLeft(s, time, progress){
-                    if(progressBar){
+                autoplayTimeLeft(s, time, progress) {
+                    if (progressBar) {
                         progressBar.style.setProperty("--progress", (1 - progress));
                     }
-                    
+
                 },
-                slideChange(s){
+                slideChange(s) {
                     startAutoplay(s, 1200)
                 }
             }
@@ -92,8 +106,8 @@ window.onload = () => {
             slidesPerView: 1,
             spaceBetween: 0,
             speed: 600,
-            autoplay:{
-                delay:3000,
+            autoplay: {
+                delay: 3000,
                 disableOnInteraction: true,
             },
             loop: true,
@@ -156,21 +170,21 @@ window.onload = () => {
             opacity: '1',
             duration: '1',
         })
-        let topStart = isMobile ? "top-=96": "top-=121";
+        let topStart = isMobile ? "top-=96" : "top-=121";
         console.log('topStart', topStart)
         console.log('isMobile', isMobile)
         var videoTl = gsap.timeline({
             scrollTrigger: {
                 markers: false,
                 trigger: "#top",
-                start: topStart, 
-                end: isMobile? "bottom" : "center +=200", 
+                start: topStart,
+                end: isMobile ? "bottom" : "center +=200",
                 scrub: 1,
                 toggleAction: 'play none none reverse',
-                pin: false, 
+                pin: false,
             }
         })
-        videoTl.to('.video-bg',{
+        videoTl.to('.video-bg', {
             scaleY: isMobile ? '1.5' : '1.7',
             scaleX: isMobile ? '1.5' : '1.7',
             height: '100vh'
@@ -179,20 +193,20 @@ window.onload = () => {
             scrollTrigger: {
                 markers: false,
                 trigger: "#top",
-                start: topStart, 
-                end: isMobile ? "bottom" : "bottom -=900", 
+                start: topStart,
+                end: isMobile ? "bottom" : "bottom -=900",
                 scrub: 1,
                 toggleAction: 'play none none reverse',
-                pin: false, 
+                pin: false,
             }
         })
-        tl .to('.mask-img', {
+        tl.to('.mask-img', {
             scaleX: isMobile ? '4' : '3',
             scaleY: isMobile ? '4' : '3',
             z: '1',
             y: isMobile ? '-40vh' : '-20vh',
         })
-       
+
 
 
         var bg = gsap.timeline({
@@ -218,27 +232,27 @@ window.onload = () => {
             smoothWheel: true,
             smoothTouch: false,
             touchMultiplier: 2,
-          })
-          function raf(time) {
+        })
+        function raf(time) {
             lenis.raf(time)
             requestAnimationFrame(raf)
-          }
-          requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
 
-       /*  const lenis = new Lenis({
-            duration: 2,
-            easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
-            orientation: 'vertical',
-            gestureOrientation: 'vertical',
-            smoothWheel: true,
-            smoothTouch: false,
-            touchMultiplier: 2,
-        })
-        lenis.on('scroll', ScrollTrigger.update)
-        gsap.ticker.add((time) => {
-            lenis.raf(time * 2000)
-        })
-        gsap.ticker.lagSmoothing(0) */
+        /*  const lenis = new Lenis({
+             duration: 2,
+             easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+             orientation: 'vertical',
+             gestureOrientation: 'vertical',
+             smoothWheel: true,
+             smoothTouch: false,
+             touchMultiplier: 2,
+         })
+         lenis.on('scroll', ScrollTrigger.update)
+         gsap.ticker.add((time) => {
+             lenis.raf(time * 2000)
+         })
+         gsap.ticker.lagSmoothing(0) */
 
         gsap.set('.second-up', {
             scale: '0.7',
@@ -282,27 +296,27 @@ window.onload = () => {
             duration: '1'
         })
 
-        gsap.set('.line-up',{
-                 opacity: 0,
-                rotationX: -100,
-                force3D: true,
-                transformOrigin: "top center -100",
+        gsap.set('.line-up', {
+            opacity: 0,
+            rotationX: -100,
+            force3D: true,
+            transformOrigin: "top center -100",
         })
 
         var lineUps = gsap.utils.toArray('.line-up');
-        lineUps.forEach((lineUp)=>{
+        lineUps.forEach((lineUp) => {
             gsap.to(lineUp,
-            {
-                scrollTrigger: lineUp,
-                duration: 0.5,
-                opacity: 1,
-                rotationX: 0,
-                force3D: true,
-                transformOrigin: "top center -100",
-                stagger: 0.2
-            })
+                {
+                    scrollTrigger: lineUp,
+                    duration: 0.5,
+                    opacity: 1,
+                    rotationX: 0,
+                    force3D: true,
+                    transformOrigin: "top center -100",
+                    stagger: 0.2
+                })
         })
-       
+
 
         var sections = gsap.utils.toArray('.scale-up');
         sections.forEach((section) => {
@@ -373,27 +387,27 @@ window.onload = () => {
         let mm = gsap.matchMedia();
         mm.add("(max-width: 1024px)", () => {
             var mainBtns = gsap.utils.toArray('.main-btn');
-            mainBtns.forEach((mainBtn)=>{
-               gsap.to(mainBtn, {
-              
-                duration: 0.7,
-                paddingRight: '0px',
-               });
-               gsap.to(mainBtn.querySelector('.point'),{
-                duration: 0.7,
-                background: '#fff',
-                right: '14px'
-               });
-               gsap.to(mainBtn.querySelector('.main-text'),{
-                duration: 0.7,
-                background: '#8d95f9',
-                borderColor: '#8d95f9',
-                color: '#1823A7',
-                paddingRight: '44px'
-               })
+            mainBtns.forEach((mainBtn) => {
+                gsap.to(mainBtn, {
+
+                    duration: 0.7,
+                    paddingRight: '0px',
+                });
+                gsap.to(mainBtn.querySelector('.point'), {
+                    duration: 0.7,
+                    background: '#fff',
+                    right: '14px'
+                });
+                gsap.to(mainBtn.querySelector('.main-text'), {
+                    duration: 0.7,
+                    background: '#8d95f9',
+                    borderColor: '#8d95f9',
+                    color: '#1823A7',
+                    paddingRight: '44px'
+                })
             })
         })
-        
+
         const isTouchDevice = 'ontouchstart' in window;
         const createCursorFollower = () => {
             const el = document.querySelector('.cursor-follower');
@@ -453,6 +467,20 @@ window.onload = () => {
         counterTargets.forEach((target) => {
             observerCounter.observe(target);
         });
+    }
+
+
+    const customSelectElement = document.getElementById('contact-select')
+    if (typeof customSelect !== undefined && customSelectElement) {
+        console.log('custom select')
+        const mySelects = customSelect(customSelectElement);
+        const root = document.querySelector(':root');
+
+        // set css variable
+        const options = document.querySelectorAll(".custom-select-option");
+        if (options.length > 0) {
+            root.style.setProperty('--custom_select_count', options.length);
+        }
     }
 }
 
