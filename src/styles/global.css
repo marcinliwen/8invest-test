@@ -900,8 +900,10 @@ html.lenis {
       opacity: 0;
   }
   .lang .custom-select-opener {
-    padding: 0 40px 0 8px;
+    padding: 0 24px 0 8px;
     border: 0;
+    width: 56px;
+    display: block;
     
   }
   .custom-select-opener:after{
