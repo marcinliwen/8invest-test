@@ -529,3 +529,18 @@ function letCount() {
 
 
 }
+/* 
+document.addEventListener("DOMContentLoaded", function(){
+    document.body.addEventListener("touchstart", playVideo);
+    playVideo()
+    function playVideo() {
+        console.log('play video')
+
+        const video = document.getElementById('myVideo');
+        video.setAttribute("playsinline", true)
+        if(video.playing) {
+        } else {
+            video.play();
+        }
+    }
+});  */

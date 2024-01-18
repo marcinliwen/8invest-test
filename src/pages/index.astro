@@ -24,53 +24,59 @@ const itemList = [
 
 <Layout title="Home" isHome={true} hasCursor={true}>
   <div class="relative overflow-hidden">
-    <video
-      autoplay
-      loop
-      muted
-      playsinline
-      class="video-bg"
-    >
-      <source src="/assets/video/home-2.mp4" />
+    <video playsinline muted autoplay class="video-bg video-js" >
+      <source src="/assets/video/home-2.mp4" type="video/mp4" />
     </video>
-    <div class="video-cover"></div>
-    <section
-      id="top"
-      class="pt-8 lg:pt-[120px] pb-[34px] relative z-30 lg:pb-16 home-hero-section"
-    >
-      <div class="home-mask">
-        <svg xmlns="http://www.w3.org/2000/svg" width="2880" height="5497" class="mask-img"  viewBox="0 0 2880 5497" fill="none">
-          <path fill-rule="evenodd" clip-rule="evenodd" d="M2880 0H0V5496.96H337.713C419.762 4961.94 882.028 4552.17 1440 4552.17C1997.97 4552.17 2460.24 4961.94 2542.29 5496.96H2880V0Z" fill="#1823A7"/>
-          </svg>
-      </div>
-      <div class="swiper swiper-home">
-        <div class="swiper-wrapper">
-          {
-            [1, 2, 3].map((item) => {
-              return (
-                <div class="swiper-slide">
-                  <div class="container wrapper relative z-30 ">
-                    <div class="text-center pb-[87px]">
-                      <h1 class="mb-3">Inwestuj w ziemie, buduj przyszłość!</h1>
-                      <h3 class="max-w-[687px] mx-auto mb-8">
-                        Z nami skorzystasz z doświadczenia naszego zespołu,
-                        który zdobył zaufanie partnerów w branży.{item}
-                      </h3>
-                      <a class="flex items-center max-w-max mx-auto main-btn">
-                        <span class="btn white btn-text main-text">
-                          Dowiedz się więcej
-                        </span>
-                        <span class="w-6 h-6 bg-second-600 rounded-full flex-shrink-0 block point" />
-                      </a>
-                    </div>
+  </div>
+  <div class="video-cover"></div>
+  <section
+    id="top"
+    class="pt-8 lg:pt-[120px] pb-[34px] relative z-30 lg:pb-16 home-hero-section"
+  >
+    <div class="home-mask">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="2880"
+        height="5497"
+        class="mask-img"
+        viewBox="0 0 2880 5497"
+        fill="none"
+      >
+        <path
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          d="M2880 0H0V5496.96H337.713C419.762 4961.94 882.028 4552.17 1440 4552.17C1997.97 4552.17 2460.24 4961.94 2542.29 5496.96H2880V0Z"
+          fill="#1823A7"></path>
+      </svg>
+    </div>
+    <div class="swiper swiper-home">
+      <div class="swiper-wrapper">
+        {
+          [1, 2, 3].map((item) => {
+            return (
+              <div class="swiper-slide">
+                <div class="container wrapper relative z-30 ">
+                  <div class="text-center pb-[87px]">
+                    <h1 class="mb-3">Inwestuj w ziemie, buduj przyszłość!</h1>
+                    <h3 class="max-w-[687px] mx-auto mb-8">
+                      Z nami skorzystasz z doświadczenia naszego zespołu, który
+                      zdobył zaufanie partnerów w branży.{item}
+                    </h3>
+                    <a class="flex items-center max-w-max mx-auto main-btn">
+                      <span class="btn white btn-text main-text">
+                        Dowiedz się więcej
+                      </span>
+                      <span class="w-6 h-6 bg-second-600 rounded-full flex-shrink-0 block point" />
+                    </a>
                   </div>
                 </div>
-              );
-            })
-          }
-        </div>
+              </div>
+            );
+          })
+        }
       </div>
-      <!-- <div class="container wrapper relative z-30 mt-auto">
+    </div>
+    <!-- <div class="container wrapper relative z-30 mt-auto">
         <div class="pagination-container">
           <div class="autoplay-progress"></div>
           <div class="swiper-pagination home-swiper-pagination static text-right">
@@ -79,90 +85,87 @@ const itemList = [
        
         </div>
       </div> -->
-      <div class="container wrapper relative z-30 mt-auto">
-        <div class="mt-auto flex justify-between items-center">
-          <ul class="flex gap-10">
-            <li><a class="text-sm">Facebook</a></li>
-            <li><a class="text-sm">Linked In</a></li>
-          </ul>
-          <div class="pagination-container">
-            <div class="autoplay-progress"></div>
-            <div
-              class="swiper-pagination home-swiper-pagination static text-right"
-            >
-            </div>
-            <!-- <div class="flex items-center gap-[4px]">
+    <div class="container wrapper relative z-30 mt-auto">
+      <div class="mt-auto flex justify-between items-center">
+        <ul class="flex gap-10">
+          <li><a class="text-sm">Facebook</a></li>
+          <li><a class="text-sm">Linked In</a></li>
+        </ul>
+        <div class="pagination-container">
+          <div class="autoplay-progress"></div>
+          <div
+            class="swiper-pagination home-swiper-pagination static text-right"
+          >
+          </div>
+          <!-- <div class="flex items-center gap-[4px]">
             <span class="h-[1px] w-[78px] block bg-second-200"></span>
             <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"
             ></span>
             <span class="rounded-full h-[7px] w-[7px] bg-second-200 block"
             ></span>
           </div> -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <section
+    id="second"
+    class="relative z-30 rounded-[32px] pb-20 lg:pb-[167px] pt-[200px] lg:pt-[402px] mt-[125px] md:mt-0"
+  >
+    <div class="continer wrapper relative z-30">
+      <div
+        class="mb-[106px] flex flex-wrap lg:flex-nowrap items-center gap-14 max-w-[917px] mx-auto second-up"
+      >
+        <img src="/assets/images/8invest-icon.png" class="" />
+        <div>
+          <h2 class="mb-[14px]">Fundusz Inwestycyjny 8Invest</h2>
+          <p class="lg:text-2xl">
+            Celem funduszu jest celowe inwestowanie w ziemię, dostosowane do
+            indywidualnych potrzeb Partnerów Inwestycyjnych. Umożliwiając rozwój
+            i skalowanie ich projektów. Nasza działalność opiera się na
+            wartościach, profesjonalizmie i skuteczności.
+          </p>
+        </div>
+      </div>
+      <div class="max-w-[1174px] mx-auto third-up opacity-0">
+        <div class="flex flex-col lg:flex-row-reverse gap-5">
+          <div class="mb-12 lg:mb-0">
+            <img src="/assets/images/home-2.png" class="mx-auto" />
+          </div>
+          <div class="flex-1 max-w-[742px] self-center lg:self-left">
+            <h3 class="mb-10">Strategiczna przewaga 8Invest:</h3>
+            <ol class="mb-10">
+              {
+                itemList.map((item) => {
+                  return <li class="lg:text-lg mb-2 leading-[30px]">{item}</li>;
+                })
+              }
+            </ol>
+            <div class="flex gap-6 items-center">
+              <a class="btn white">Lorem ipsum</a>
+              <a class="btn line">Lorem ipsum</a>
+            </div>
           </div>
         </div>
       </div>
-    </section>
-      <section
-        id="second"
-        class="relative z-30 rounded-[32px] pb-20 lg:pb-[167px] pt-[200px] lg:pt-[402px] mt-[125px] md:mt-0"
-      >
-        <div class="continer wrapper relative z-30">
-          <div
-            class="mb-[106px] flex flex-wrap lg:flex-nowrap items-center gap-14 max-w-[917px] mx-auto second-up"
-          >
-            <img src="/assets/images/8invest-icon.png" class="" />
-            <div>
-              <h2 class="mb-[14px]">Fundusz Inwestycyjny 8Invest</h2>
-              <p class="lg:text-2xl">
-                Celem funduszu jest celowe inwestowanie w ziemię, dostosowane do
-                indywidualnych potrzeb Partnerów Inwestycyjnych. Umożliwiając
-                rozwój i skalowanie ich projektów. Nasza działalność opiera się
-                na wartościach, profesjonalizmie i skuteczności.
-              </p>
-            </div>
-          </div>
-          <div class="max-w-[1174px] mx-auto third-up opacity-0">
-            <div class="flex flex-col lg:flex-row-reverse gap-5">
-              <div class="mb-12 lg:mb-0">
-                <img src="/assets/images/home-2.png" class="mx-auto" />
-              </div>
-              <div class="flex-1 max-w-[742px] self-center lg:self-left">
-                <h3 class="mb-10">Strategiczna przewaga 8Invest:</h3>
-                <ol class="mb-10">
-                  {
-                    itemList.map((item) => {
-                      return (
-                        <li class="lg:text-lg mb-2 leading-[30px]">{item}</li>
-                      );
-                    })
-                  }
-                </ol>
-                <div class="flex gap-6 items-center">
-                  <a class="btn white">Lorem ipsum</a>
-                  <a class="btn line">Lorem ipsum</a>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-  </div>
-    <div class="relative z-30">
-      <Director />
-      <PersonReverse />
-      <Numbers />
-      <Teritory />
-      <Person />
-      <References />
     </div>
-  
-    <script is:inline src="/assets/js/custom-select.min.js"></script>
-  <script is:inline src="/assets/js/lenis.min.js"></script>
-  <script is:inline src="/assets/js/ScrollTrigger.min.js"></script>
-  <script is:inline src="/assets/js/gsap.min.js"></script>
-  <script is:inline src="/assets/js/Observer.min.js"></script>
-  <link rel="stylesheet" href="/assets/style/swiper-bundle.min.css" />
-  <script is:inline src="/assets/js/swiper-bundle.min.js"></script>
-  <link rel="stylesheet" href="/assets/style/slider.css" />
-  <script is:inline src="/assets/js/main.js"></script>
+  </section>
 </Layout>
+<div class="relative z-30">
+  <Director />
+  <PersonReverse />
+  <Numbers />
+  <Teritory />
+  <Person />
+  <References />
+</div>
+<script is:inline src="/assets/video-js/video.min.js"></script>
+<script is:inline src="/assets/js/custom-select.min.js"></script>
+<script is:inline src="/assets/js/lenis.min.js"></script>
+<script is:inline src="/assets/js/ScrollTrigger.min.js"></script>
+<script is:inline src="/assets/js/gsap.min.js"></script>
+<script is:inline src="/assets/js/Observer.min.js"></script>
+<link rel="stylesheet" href="/assets/style/swiper-bundle.min.css" />
+<script is:inline src="/assets/js/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="/assets/style/slider.css" />
+<script is:inline src="/assets/js/main.js"></script>
