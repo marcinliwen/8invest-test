@@ -427,6 +427,18 @@
         contain: paint;
     }
 
+    .video-bg{
+        position:fixed;
+        bottom:-30px;
+        z-index: 20;
+        object-position:center;
+        object-fit: cover;
+        height: 30vh;
+        opacity: 0;
+        width: 100vw;
+        left: 50%;
+        transform: translateX(-50%);
+    }
 
     .bg-video {
        /*  position: fixed;
@@ -457,14 +469,14 @@
     right: 0%;
     transform: scale(1);
     }
-    .home-mask >img{
+    .home-mask >svg{
         width: 101vw;
     height: 190.764vw;
     max-width: none;
     transform-origin: 50% 100%;
     object-fit: cover;
     position: absolute;
-    top: -157.2vw;
+    top: -154.2vw;
     bottom: auto;
     left: -0.5vw;
     right: -0.5vw;
@@ -492,6 +504,11 @@
         transition: padding-right linear 400ms;
     }
     @media(min-width: 768px) {
+        .video-bg{
+            bottom: -10px;
+            height: 30vh;
+            width: 65vw;
+        }
         .home-mask{
             z-index: 0;
         height: 30vh;
@@ -587,7 +604,7 @@
 
 
     }
-
+    
 }
 
 .line-animation-left {

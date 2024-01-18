@@ -1,5 +1,5 @@
 window.onload = () => {
-    let isMobile = window.matchMedia("(max-width: 1024px)");
+    let isMobile = window.matchMedia("(max-width: 1024px)").matches;
     /**
      * line animation 
      */
@@ -149,31 +149,52 @@ window.onload = () => {
 
         gsap.to('.video-bg', {
             opacity: '1',
-            duration: '3'
+            duration: '1',
+        })
+        let topStart = isMobile ? "top-=96": "top-=121";
+        console.log('topStart', topStart)
+        console.log('isMobile', isMobile)
+        var videoTl = gsap.timeline({
+            scrollTrigger: {
+                markers: false,
+                trigger: "#top",
+                start: topStart, 
+                end: isMobile? "bottom" : "center +=200", 
+                scrub: 1,
+                toggleAction: 'play none none reverse',
+                pin: false, 
+            }
+        })
+        videoTl.to('.video-bg',{
+            scaleY: isMobile ? '1.5' : '1.7',
+            scaleX: isMobile ? '1.5' : '1.7',
+            height: '100vh'
         })
         var tl = gsap.timeline({
             scrollTrigger: {
                 markers: false,
                 trigger: "#top",
-                start: "top-=121", 
+                start: topStart, 
                 end: isMobile ? "bottom" : "bottom -=900", 
                 scrub: 1,
                 toggleAction: 'play none none reverse',
                 pin: false, 
             }
         })
-        tl.to('.mask-img', {
+        tl .to('.mask-img', {
             scaleX: isMobile ? '4' : '3',
             scaleY: isMobile ? '4' : '3',
             z: '1',
-            y: isMobile ? '-40vh' : '0',
+            y: isMobile ? '-40vh' : '-20vh',
         })
+       
+
 
         var bg = gsap.timeline({
             scrollTrigger: {
                 markers: false,
                 trigger: '#second',
-                start: 'top center',
+                start: 'top center+=200',
                 end: 'top =200',
                 scrub: true,
             },
@@ -181,7 +202,7 @@ window.onload = () => {
 
         bg.to('.video-cover', {
             opacity: '0.7',
-            duration: '1'
+            duration: '3'
 
         })
         const lenis = new Lenis({
