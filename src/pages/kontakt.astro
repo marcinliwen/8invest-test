@@ -140,7 +140,7 @@ import Numbers from "../components/Numbers.astro";
           </p>
         </div>
         <div class="lg:max-w-[578px] w-full lg:flex-shrink-0">
-          <form class="w-full max-w-[562px] md:ml-auto flex flex-col gap-6">
+          <form id="contact-form" class="w-full max-w-[562px] md:ml-auto flex flex-col gap-6">
             <Input name="name" type="text" placeholder="Imię i nazwisko" />
 			<Input name="firma" type="text" placeholder="Nazwa firmy" />
 			<Input name="phone" type="phone" placeholder="Numer telefonu" />
@@ -152,7 +152,7 @@ import Numbers from "../components/Numbers.astro";
             /> -->
             <label>
               <select id="contact-select">
-                <option value="">select..</option>
+                <option value="">Temat</option>
                 <option value="first">first</option>
                 <option value="second">second</option>
                 <option value="third">third</option>
@@ -172,7 +172,6 @@ import Numbers from "../components/Numbers.astro";
   <Numbers />
 </Layout>
 <script is:inline src="/assets/js/custom-select.min.js"></script>
-<link rel="stylesheet" href="/assets/style/custom-select.css" />
 <script is:inline src="/assets/js/lenis.min.js"></script>
   <script is:inline src="/assets/js/ScrollTrigger.min.js"></script>
   <script is:inline src="/assets/js/gsap.min.js"></script>

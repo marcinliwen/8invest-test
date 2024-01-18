@@ -171,8 +171,6 @@ window.onload = () => {
             duration: '1',
         })
         let topStart = isMobile ? "top-=96" : "top-=121";
-        console.log('topStart', topStart)
-        console.log('isMobile', isMobile)
         var videoTl = gsap.timeline({
             scrollTrigger: {
                 markers: false,
@@ -471,9 +469,21 @@ window.onload = () => {
 
 
     const customSelectElement = document.getElementById('contact-select')
+    
     if (typeof customSelect !== undefined && customSelectElement) {
-        console.log('custom select')
         const mySelects = customSelect(customSelectElement);
+        const root = document.querySelector(':root');
+
+        // set css variable
+        const options = document.querySelectorAll(".custom-select-option");
+        if (options.length > 0) {
+            root.style.setProperty('--custom_select_count', options.length);
+        }
+    }
+    const langSelector = document.getElementById('lang-selector');
+    
+    if (typeof customSelect !== undefined && langSelector) {
+        const langSelect = customSelect(langSelector);
         const root = document.querySelector(':root');
 
         // set css variable

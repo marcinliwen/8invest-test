@@ -1,6 +1,6 @@
 .custom-select-container {
   position: relative;
-  box-sizing: border-box;;
+  box-sizing: border-box;
 }
 .custom-select-container * {
   box-sizing: border-box;
@@ -8,28 +8,34 @@
 .custom-select-container.is-disabled {
   opacity: .333;
 }
-.custom-select-opener {
-  background-color: #ccc;
-  padding: 0.5em;
+.lang select{
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding:0
+
+}
+#contact-form .custom-select-opener {
   display: block;
   cursor: pointer;
   width: 100%;
+ 
+}
+#contact-form .custom-select-opener{
   padding: 16px 24px;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 22px;
-        color: #fff;
-        width: 100%;
-        max-width: 594px;
-        transition-duration: 300ms;
-        transition-timing-function: ease-in-out;
-        background-color: transparent;
-        border: 1px solid #FFF;
-        border-radius: 700px;
-        background-image: url('/assets/icons/select-icon.svg');
-        background-repeat: no-repeat;
-        background-position: calc(100% - 24px);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  color: #fff;
+  width: 100%;
+  max-width: 594px;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+  background-color: transparent;
+  border: 1px solid #FFF;
+  border-radius: 700px;
 }
 .custom-select-container select {
   visibility: hidden;
@@ -51,6 +57,8 @@
 :root{
   --custom_select_height: 47px;
   --custom_select_count: 1;
+  --lang_select_height: 34px;
+  --lang_select_count: 2;
 }
 .custom-select-option {
   padding: 12px 24px;
@@ -61,6 +69,14 @@
 .custom-select-container.is-open .custom-select-panel {
   max-height: calc(var(--custom_select_height) * var(--custom_select_count));
   overflow-y: auto
+}
+.lang .custom-select-container.is-open .custom-select-panel {
+  max-height: calc(var(--lang_select_height) * var(--lang_select_count));
+  overflow-y: auto
+}
+
+.lang .custom-select-container .custom-select-panel::-webkit-scrollbar {
+  display: none;
 }
 
 .custom-select-option.has-focus {
@@ -92,7 +108,50 @@
 .custom-select-option {
   background-color: #fff;
 }
-
-.custom-select-panel {
+.lang  select{
+  visibility: hidden;
+    position: absolute;
+    top: 0;
+    left:0;
+    border: none;
+    opacity: 0;
+}
+.lang .custom-select-opener {
+  padding: 0 40px 0 8px;
+  border: 0;
   
+}
+.custom-select-opener:after{
+  content:"";
+  background-image: url('/assets/icons/select-icon.svg');
+  background-repeat: no-repeat;
+  width: 20px;
+  display: block;
+  position: absolute;
+  height: 20px;
+  right: 0;
+  top: 0;
+  z-index: 10;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+}
+.custom-select-container.is-open .custom-select-opener:after{
+  transform: scaleY(-1);
+}
+#contact-form .custom-select-opener:after {
+  top: 16px;
+  right: 24px;
+}
+.lang .custom-select-option {
+  padding: 5px 12px;
+  height: auto;
+  text-align: center;
+}
+
+.lang .custom-select-option:first-of-type {
+  border-radius: 12px 12px 0 0;
+}
+
+.lang .custom-select-option:last-of-type {
+  border-radius: 0 0 12px 12px;
 }
