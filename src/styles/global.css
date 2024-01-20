@@ -516,7 +516,7 @@
     @media screen and (max-width:767px) and (orientation: landscape){
         .video-bg{
             bottom: -30px;
-            height: 60vh;
+            height: 64vh;
             width: 100vw;
         }
     }
@@ -754,7 +754,7 @@
     border-color: currentColor;
     background-color: currentColor;
     color: var(--fallback-bc,oklch(var(--bc)/.5));
-    transition: background,box-shadow var(--animation-input,.2s) ease-out;
+    transition: background, box-shadow var(--animation-input,.2s) ease-out;
     box-shadow: var(--handleoffsetcalculator) 0 0 2px var(--tglbg) inset,0 0 0 2px var(--tglbg) inset,var(--togglehandleborder);
   }
   .toggle-xl{

@@ -1,6 +1,6 @@
 window.onload = () => {
     let isMobile = window.matchMedia("(max-width: 767px)").matches;
-    let isTablet = window.matchMedia("(min-width: 768px) and (max-width: 1023px)").matches;
+    let isTablet = window.matchMedia("(min-width: 768px) and (max-width: 1024px)").matches;
    
     window.addEventListener("resize", ()=>{
         
