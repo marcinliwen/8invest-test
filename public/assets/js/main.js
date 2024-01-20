@@ -180,6 +180,7 @@ window.onload = () => {
             duration: '1',
         })
         let topStart = isMobile ? "top-=96" : "top-=121";
+        
         var videoTl = gsap.timeline({
             scrollTrigger: {
                 markers: false,
@@ -189,7 +190,6 @@ window.onload = () => {
                 scrub: 1,
                 toggleAction: 'play none none reverse',
                 pin: false,
-                invalidateOnRefresh: true,
             }
         })
         videoTl.to('.video-bg', {
@@ -231,7 +231,6 @@ window.onload = () => {
                 scrub: 1,
                 toggleAction: 'play none none reverse',
                 pin: false,
-                invalidateOnRefresh: true,
             }
         })
         if(isTablet){
@@ -252,6 +251,7 @@ window.onload = () => {
         
 
         window.addEventListener("resize", ()=>{
+            if(isTablet){
             console.log('resize gsap')
             videoTl.to('.video-bg', {
                 scaleY: isMobile ? '1.5' : '1.6',
@@ -295,6 +295,7 @@ window.onload = () => {
                     z: '1',
                     y: isMobile ? '-40vh' : '-20vh',
                 })
+            }
             }
         });
 
