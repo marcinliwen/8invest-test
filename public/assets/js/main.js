@@ -1,5 +1,14 @@
 window.onload = () => {
-    let isMobile = window.matchMedia("(max-width: 1024px)").matches;
+    let isMobile = window.matchMedia("(max-width: 767px)").matches;
+    let isTablet = window.matchMedia("(min-width: 768px) and (max-width: 1023px)").matches;
+   
+    window.addEventListener("resize", ()=>{
+        
+        isMobile = window.matchMedia("(max-width: 767px)").matches;
+        isTablet = window.matchMedia("(min-width: 768px) and (max-width: 1023px)").matches;
+        console.log('resize', 'isMobile', isMobile, 'isTablet', isTablet)
+    });
+    
     /**
      * line animation 
      */
@@ -176,17 +185,43 @@ window.onload = () => {
                 markers: false,
                 trigger: "#top",
                 start: topStart,
-                end: isMobile ? "bottom" : "center +=200",
+                end: isMobile ? "bottom" : "center +=150",
                 scrub: 1,
                 toggleAction: 'play none none reverse',
                 pin: false,
+                invalidateOnRefresh: true,
             }
         })
         videoTl.to('.video-bg', {
-            scaleY: isMobile ? '1.5' : '1.7',
-            scaleX: isMobile ? '1.5' : '1.7',
+            scaleY: isMobile ? '1.5' : '1.6',
+            scaleX: isMobile ? '1.5' : '1.6',
             height: '100vh'
         })
+        if(isMobile){
+            gsap.to('.mask-img',{
+                scaleX: '1.3',
+                scaleY: '1.3',
+                z: '1',
+            
+            })
+        }else if(isTablet){
+            gsap.to('.mask-img',{
+                scaleX: '1.5',
+                scaleY: '1.5',
+                z: '1',
+            
+            })
+        }
+        else{
+            gsap.to('.mask-img',{
+                scaleX: '1',
+                scaleY: '1',
+                z: '1',
+            
+            })
+        }
+        
+       
         var tl = gsap.timeline({
             scrollTrigger: {
                 markers: false,
@@ -196,16 +231,72 @@ window.onload = () => {
                 scrub: 1,
                 toggleAction: 'play none none reverse',
                 pin: false,
+                invalidateOnRefresh: true,
             }
         })
-        tl.to('.mask-img', {
-            scaleX: isMobile ? '4' : '3',
-            scaleY: isMobile ? '4' : '3',
-            z: '1',
-            y: isMobile ? '-40vh' : '-20vh',
-        })
+        if(isTablet){
+            tl.to('.mask-img', {
+                scaleX: '5',
+                scaleY: '5',
+                z: '1',
+                y: '-40vh'
+            })
+        }else{
+            tl.to('.mask-img', {
+                scaleX: isMobile ? '4' : '3',
+                scaleY: isMobile ? '4' : '3',
+                z: '1',
+                y: isMobile ? '-40vh' : '-20vh',
+            })
+        }
+        
 
-
+        window.addEventListener("resize", ()=>{
+            console.log('resize gsap')
+            videoTl.to('.video-bg', {
+                scaleY: isMobile ? '1.5' : '1.6',
+                scaleX: isMobile ? '1.5' : '1.6',
+                height: '100vh'
+            })
+            if(isMobile){
+                gsap.to('.mask-img',{
+                    scaleX: '1.3',
+                    scaleY: '1.3',
+                    z: '1',
+                
+                })
+            }else if(isTablet){
+                gsap.to('.mask-img',{
+                    scaleX: '1.5',
+                    scaleY: '1.5',
+                    z: '1',
+                
+                })
+            }
+            else{
+                gsap.to('.mask-img',{
+                    scaleX: '1',
+                    scaleY: '1',
+                    z: '1',
+                
+                })
+            }
+            if(isTablet){
+                tl.to('.mask-img', {
+                    scaleX: '5',
+                    scaleY: '5',
+                    z: '1',
+                    y: '-40vh'
+                })
+            }else{
+                tl.to('.mask-img', {
+                    scaleX: isMobile ? '4' : '3',
+                    scaleY: isMobile ? '4' : '3',
+                    z: '1',
+                    y: isMobile ? '-40vh' : '-20vh',
+                })
+            }
+        });
 
         var bg = gsap.timeline({
             scrollTrigger: {
@@ -285,10 +376,8 @@ window.onload = () => {
                     end: 'top top+=60%',
                 },
             }
-
         )
         thirdUp.to('.third-up', {
-
             opacity: '1',
             scale: '1',
             duration: '1'

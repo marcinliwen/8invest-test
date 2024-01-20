@@ -486,7 +486,7 @@
     transform-origin: 50% 100%;
     object-fit: cover;
     position: absolute;
-    top: -154.2vw;
+    top: -160vw;
     bottom: auto;
     left: -0.5vw;
     right: -0.5vw;
@@ -513,11 +513,18 @@
         padding-right: 44px;
         transition: padding-right linear 400ms;
     }
+    @media screen and (max-width:767px) and (orientation: landscape){
+        .video-bg{
+            bottom: -30px;
+            height: 60vh;
+            width: 100vw;
+        }
+    }
     @media(min-width: 768px) {
         .video-bg{
-            bottom: -10px;
-            height: 30vh;
-            width: 65vw;
+            bottom: -30px;
+            height: 40vh;
+            width: 100vw;
         }
         .home-mask{
             z-index: 0;
@@ -614,7 +621,53 @@
 
 
     }
-    
+
+    @media screen and (min-width:767px) and (max-width:1023px) and  (orientation: landscape){
+        .video-bg{
+            bottom: -30px;
+            height: 60vh;
+            width: 100vw;
+        }
+    }
+    @media(min-width: 1024px){
+        .video-bg{
+            bottom: 0px;
+            height: 35vh;
+            width: 70vw;
+        }
+        .home-mask{
+            z-index: 0;
+        height: 30vh;
+        max-height: 30vw;
+        min-height: 15.0694vw;
+        transform-origin: 50% 100%;
+        position: fixed;
+        top: auto;
+        bottom: 0%;
+        left: 0%;
+        right: 0%;
+        transform: scale(1);
+        }
+        .home-mask >img{
+            width: 101vw;
+        height: 190.764vw;
+        max-width: none;
+        transform-origin: 50% 100%;
+        object-fit: cover;
+        position: absolute;
+        top: -157.2vw;
+        bottom: auto;
+        left: -0.5vw;
+        right: -0.5vw;
+        }
+    }
+    @media screen  and (min-width:1024px) and  (orientation: landscape){
+        .video-bg{
+            bottom: -30px;
+            height: 60vh;
+            width: 100vw;
+        }
+    }
 }
 
 .line-animation-left {
@@ -664,6 +717,8 @@
     z-index: 10000;
     user-select: none;
     pointer-events: none;
+    font-size: 10px;
+    font-weight: 600;
 }
 
 
@@ -836,6 +891,12 @@ html.lenis {
     top: 100%;
     z-index: 1;
     width: 100%;
+  }
+  .custom-select-panel::-webkit-scrollbar{
+    display: none;
+  }
+  .custom-select-panel{
+    scrollbar-width: none;
   }
   :root{
     --custom_select_height: 47px;

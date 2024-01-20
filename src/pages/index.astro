@@ -31,7 +31,7 @@ const itemList = [
   <div class="video-cover"></div>
   <section
     id="top"
-    class="pt-8 lg:pt-[120px] pb-[34px] relative z-30 lg:pb-16 home-hero-section"
+    class="pt-8 lg:pt-[70px] xl:pt-[120px] pb-[34px] relative z-30 lg:pb-16 home-hero-section"
   >
     <div class="home-mask">
       <svg
@@ -58,7 +58,7 @@ const itemList = [
                 <div class="container wrapper relative z-30 ">
                   <div class="text-center pb-[87px]">
                     <h1 class="mb-3">Inwestuj w ziemie, buduj przyszłość!</h1>
-                    <h3 class="max-w-[687px] mx-auto mb-8">
+                    <h3 class="max-w-[800px] mx-auto mb-8 leading-10">
                       Z nami skorzystasz z doświadczenia naszego zespołu, który
                       zdobył zaufanie partnerów w branży.{item}
                     </h3>
@@ -150,15 +150,16 @@ const itemList = [
       </div>
     </div>
   </section>
+  <div class="relative z-30">
+    <Director />
+    <PersonReverse />
+    <Numbers />
+    <Teritory />
+    <Person />
+    <References />
+  </div>
 </Layout>
-<div class="relative z-30">
-  <Director />
-  <PersonReverse />
-  <Numbers />
-  <Teritory />
-  <Person />
-  <References />
-</div>
+
 <script is:inline src="/assets/video-js/video.min.js"></script>
 <script is:inline src="/assets/js/custom-select.min.js"></script>
 <script is:inline src="/assets/js/lenis.min.js"></script>
